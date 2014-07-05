@@ -38,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="775" y="580"/>
         </scene>
-        <!--View Controller-->
+        <!--Ask View Controller-->
         <scene sceneID="hWb-Of-NSz">
             <objects>
-                <viewController id="9PH-Eq-KqQ" sceneMemberID="viewController">
+                <viewController id="9PH-Eq-KqQ" customClass="AskViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rcu-TQ-hAk"/>
                         <viewControllerLayoutGuide type="bottom" id="i8t-6J-awA"/>
@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="1226" y="580"/>
         </scene>
-        <!--View Controller-->
+        <!--See Answer View Controller-->
         <scene sceneID="okE-YT-YvM">
             <objects>
-                <viewController id="e4d-2b-H3A" sceneMemberID="viewController">
+                <viewController id="e4d-2b-H3A" customClass="SeeAnswerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PrF-ju-bv7"/>
                         <viewControllerLayoutGuide type="bottom" id="Ydu-I4-DbF"/>
@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="1672" y="580"/>
         </scene>
-        <!--View Controller-->
+        <!--Evaluate View Controller-->
         <scene sceneID="evZ-BT-eMa">
             <objects>
-                <viewController id="ZCl-3e-hrR" sceneMemberID="viewController">
+                <viewController id="ZCl-3e-hrR" customClass="EvaluateViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fbX-SN-Apu"/>
                         <viewControllerLayoutGuide type="bottom" id="eTe-nI-2th"/>
@@ -142,6 +142,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonPush:" destination="ZCl-3e-hrR" eventType="touchUpInside" id="esp-Pw-B1R"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -188,23 +191,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ifk-f3-9a1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="366" y="580"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="YTu-RP-FPE">
-            <objects>
-                <viewController id="LTC-RO-fu3" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="V3K-wD-V1p"/>
-                        <viewControllerLayoutGuide type="bottom" id="ipd-sz-mDM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YnK-hM-ZiC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rpc-AL-oKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
