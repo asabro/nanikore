@@ -8,13 +8,13 @@
 
 #import "TopViewController.h"
 #import "CameraViewController.h"
+#import "AppDelegate.h"
 
 #define kCameraSegue @"camera"
 #define kAskSegue @"ask"
 
 @interface TopViewController ()
             
-
 @end
 
 @implementation TopViewController
@@ -23,6 +23,8 @@
   [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
   [self.navigationController setNavigationBarHidden:YES animated:NO];
+  AppDelegate * appDelegate;
+  [appDelegate initSocketIOAsAskMode];
 }
 
 - (void)didReceiveMemoryWarning {

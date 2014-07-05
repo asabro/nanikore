@@ -20,7 +20,11 @@
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // init socket IO
-  [self initSocketIO];
+//  [self initSocketIOAsAskMode];
+  
+  _questions = [NSMutableArray array];
+  
+  [self initSocketIOAsAnswerMode];
   
   // init s3
   [self initS3];
@@ -52,9 +56,67 @@
 
 // ============
 
-- (void)initSocketIO {
+- (void)initSocketIOAsAskMode {
   // init socketIO
   _socketIO = [[AZSocketIO alloc] initWithHost:TEST_SERVER_IP andPort:TEST_SERVER_PORT secure:NO withNamespace:@"/ask"];
+  
+  // メッセージを受信した時に実行されるBlocks
+  [self.socketIO setMessageRecievedBlock:^(id data) {
+    NSLog(@"data: %@", data);
+  }];
+  
+  // イベントを受信したときに実行されるBlocks
+  [self.socketIO setEventRecievedBlock:^(NSString *eventName, id data) {
+    NSLog(@"eventName: %@, data: %@", eventName, data);
+  }];
+  
+  // エラーを受信したときに実行されるBlocks
+  [self.socketIO setErrorBlock:^(NSError *error) {
+    NSLog(@"error: %@", error);
+  }];
+  
+  // 切断されたときに実行されるBlocks
+  [self.socketIO setDisconnectedBlock:^{
+    NSLog(@"Disconnected!");
+  }];
+  
+  [self.socketIO connectWithSuccess:^{
+    NSLog(@"Success connecting!");
+  } andFailure:^(NSError *error) {
+    NSLog(@"Failure connecting. error: %@", error);
+  }];
+}
+
+#define kEventNameQuestion @"question"
+
+- (void)initSocketIOAsAnswerMode {
+  // init socketIO
+  _socketIO = [[AZSocketIO alloc] initWithHost:TEST_SERVER_IP andPort:TEST_SERVER_PORT secure:NO withNamespace:@"/answer"];
+  
+  __block AppDelegate * __self__ = self;
+  
+  // メッセージを受信した時に実行されるBlocks
+  [self.socketIO setMessageRecievedBlock:^(id data) {
+    NSLog(@"data: %@", data);
+  }];
+  
+  // イベントを受信したときに実行されるBlocks
+  [self.socketIO setEventRecievedBlock:^(NSString *eventName, id data) {
+//    NSLog(@"eventName: %@, data: %@", eventName, data);
+    if ([eventName isEqualToString:kEventNameQuestion]){
+      [__self__.questions arrayByAddingObjectsFromArray:data];
+    }
+  }];
+  
+  // エラーを受信したときに実行されるBlocks
+  [self.socketIO setErrorBlock:^(NSError *error) {
+    NSLog(@"error: %@", error);
+  }];
+  
+  // 切断されたときに実行されるBlocks
+  [self.socketIO setDisconnectedBlock:^{
+    NSLog(@"Disconnected!");
+  }];
   
   [self.socketIO connectWithSuccess:^{
     NSLog(@"Success connecting!");

@@ -7,6 +7,7 @@
 //
 
 #import "AnswerTopViewController.h"
+#import "AppDelegate.h"
 
 @interface AnswerTopViewController ()
 
@@ -18,7 +19,6 @@
 {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
-    // Custom initialization
   }
   return self;
 }
@@ -28,6 +28,8 @@
   [super viewDidLoad];
   // Do any additional setup after loading the view.
   [self.navigationController setNavigationBarHidden:YES animated:NO];
+//  AppDelegate * appDelegate;
+//  [appDelegate initSocketIOAsAnswerMode];
 }
 
 - (void)didReceiveMemoryWarning

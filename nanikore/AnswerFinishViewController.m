@@ -38,12 +38,20 @@
 
 
 - (IBAction)nextButtonPush:(id)sender {
+  [self anserNextQuestion];
+}
+
+- (void)anserNextQuestion {
   NSInteger count = 1;
   AskListViewController *vc = [self.navigationController.viewControllers objectAtIndex:count];
   [self.navigationController popToViewController:vc animated:YES];
 }
 
 - (IBAction)topButtonPush:(id)sender {
+  [self returnToRootView];
+}
+
+- (void)returnToRootView {
   [self.navigationController popToRootViewControllerAnimated:YES];
 }
 

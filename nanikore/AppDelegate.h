@@ -20,12 +20,18 @@ typedef enum {
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+// data
+@property (strong, nonatomic) NSMutableArray * questions;
 
+// web api
 @property (strong, nonatomic) AZSocketIO * socketIO;
 @property (nonatomic) UploadType uplooadType;
 @property (nonatomic, strong) AmazonS3Client *s3;
 
 +(AZSocketIO *) socketIO;
 +(AmazonS3Client *) s3;
+
+- (void)initSocketIOAsAskMode;
+- (void)initSocketIOAsAnswerMode;
 @end
 
