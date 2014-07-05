@@ -169,11 +169,23 @@
                                 <rect key="frame" x="76" y="54" width="168" height="168"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyG-vi-zWP">
+                                <rect key="frame" x="48" y="480" width="225" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Q_arigato_button.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="arigatoButtonPush:" destination="e4d-2b-H3A" eventType="touchUpInside" id="GrG-wY-nCP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZkV-Pd-HuS"/>
                     <connections>
+                        <outlet property="arigatoButton" destination="GyG-vi-zWP" id="eX4-Tb-0OO"/>
+                        <outlet property="backgroundImageView" destination="lw5-EY-tBm" id="5N1-aa-ogw"/>
                         <outlet property="imageView" destination="PWo-6A-hn9" id="7tE-6C-Z4X"/>
                         <outlet property="tableView" destination="e84-eT-0gf" id="InX-wX-nCG"/>
                     </connections>
@@ -532,6 +544,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Q_arigato_button.png" width="450" height="98"/>
         <image name="Q_collectA(gray).png" width="640" height="1136"/>
         <image name="Q_question.png" width="640" height="1136"/>
         <image name="Q_top.png" width="640" height="1136"/>

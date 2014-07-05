@@ -26,6 +26,10 @@
 		6CD62D481968627D00E904DD /* Q_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D471968627D00E904DD /* Q_top.png */; };
 		6CD62D4A1968640200E904DD /* Q_collectA(gray).png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D491968640100E904DD /* Q_collectA(gray).png */; };
 		6CD62D4C196866AE00E904DD /* Q_collectA_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D4B196866AE00E904DD /* Q_collectA_cell.png */; };
+		6CD62D5019686D5D00E904DD /* Q_selectA.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D4F19686D5D00E904DD /* Q_selectA.png */; };
+		6CD62D571968728800E904DD /* Q_silver.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D551968728800E904DD /* Q_silver.png */; };
+		6CD62D581968728800E904DD /* Q_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D561968728800E904DD /* Q_gold.png */; };
+		6CD62D5A196875C700E904DD /* Q_arigato_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D59196875C700E904DD /* Q_arigato_button.png */; };
 		F9B798B11967B7A000D97DDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B01967B7A000D97DDE /* main.m */; };
 		F9B798B41967B7A000D97DDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B31967B7A000D97DDE /* AppDelegate.m */; };
 		F9B798B71967B7A000D97DDE /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B61967B7A000D97DDE /* TopViewController.m */; };
@@ -82,6 +86,10 @@
 		6CD62D471968627D00E904DD /* Q_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Q_top.png; sourceTree = "<group>"; };
 		6CD62D491968640100E904DD /* Q_collectA(gray).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Q_collectA(gray).png"; sourceTree = "<group>"; };
 		6CD62D4B196866AE00E904DD /* Q_collectA_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Q_collectA_cell.png; sourceTree = "<group>"; };
+		6CD62D4F19686D5D00E904DD /* Q_selectA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Q_selectA.png; sourceTree = "<group>"; };
+		6CD62D551968728800E904DD /* Q_silver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Q_silver.png; sourceTree = "<group>"; };
+		6CD62D561968728800E904DD /* Q_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Q_gold.png; sourceTree = "<group>"; };
+		6CD62D59196875C700E904DD /* Q_arigato_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Q_arigato_button.png; sourceTree = "<group>"; };
 		B08DDD4CEC294F42BCBB34BB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C5FE27FD02B44B44B3BED450 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B798AB1967B7A000D97DDE /* nanikore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nanikore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +203,10 @@
 		6CD62D441968597D00E904DD /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6CD62D59196875C700E904DD /* Q_arigato_button.png */,
+				6CD62D551968728800E904DD /* Q_silver.png */,
+				6CD62D561968728800E904DD /* Q_gold.png */,
+				6CD62D4F19686D5D00E904DD /* Q_selectA.png */,
 				6CD62D4B196866AE00E904DD /* Q_collectA_cell.png */,
 				6CD62D491968640100E904DD /* Q_collectA(gray).png */,
 				6CD62D471968627D00E904DD /* Q_top.png */,
@@ -364,13 +376,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CD62D571968728800E904DD /* Q_silver.png in Resources */,
+				6CD62D581968728800E904DD /* Q_gold.png in Resources */,
 				F9B798BA1967B7A000D97DDE /* Main.storyboard in Resources */,
+				6CD62D5019686D5D00E904DD /* Q_selectA.png in Resources */,
 				6CD62D461968599100E904DD /* Q_question.png in Resources */,
 				6CD62D4A1968640200E904DD /* Q_collectA(gray).png in Resources */,
 				6CD62D4C196866AE00E904DD /* Q_collectA_cell.png in Resources */,
 				6CD62D4019683AC800E904DD /* SeeAnswerCell.xib in Resources */,
 				F9B798BC1967B7A000D97DDE /* Images.xcassets in Resources */,
 				6CD62D481968627D00E904DD /* Q_top.png in Resources */,
+				6CD62D5A196875C700E904DD /* Q_arigato_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

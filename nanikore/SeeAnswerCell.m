@@ -10,6 +10,6 @@
 
 @implementation SeeAnswerCell
 + (CGFloat)rowHeight {
-  return 118.0f;
+  return 64.0f;
 }
 @end

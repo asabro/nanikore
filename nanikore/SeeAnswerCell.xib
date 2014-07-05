@@ -30,16 +30,28 @@
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Q_silver.png" translatesAutoresizingMaskIntoConstraints="NO" id="QZZ-sf-ERI">
+                        <rect key="frame" x="20" y="0.0" width="29" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Q_gold.png" translatesAutoresizingMaskIntoConstraints="NO" id="zmP-jt-49R">
+                        <rect key="frame" x="20" y="0.0" width="29" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>
             <connections>
+                <outlet property="gold" destination="zmP-jt-49R" id="MiS-kI-3DN"/>
                 <outlet property="mainLabel" destination="F7J-aA-lkE" id="f7L-o1-8BJ"/>
                 <outlet property="nameLabel" destination="uqA-cM-VTk" id="2B6-6O-pxu"/>
+                <outlet property="silver" destination="QZZ-sf-ERI" id="W4X-nb-i7M"/>
             </connections>
         </tableViewCell>
     </objects>
     <resources>
         <image name="Q_collectA_cell.png" width="640" height="128"/>
+        <image name="Q_gold.png" width="58" height="46"/>
+        <image name="Q_silver.png" width="58" height="45"/>
     </resources>
 </document>
