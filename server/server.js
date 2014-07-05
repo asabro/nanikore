@@ -71,17 +71,11 @@ var questionList = [{
     qid: 100,
     name: "default",
     text: "What's this?",
-    url: "http://49.212.129.143:5000/assets/manekineko.jpg"
-}, {
-    qid: 101,
-    name: "default",
-    text: "How to use it?",
-    url: "http://49.212.129.143:5000/assets/washletbig.jpg"
+    url: "http://49.212.129.143:5000/uploads/1404597120041.jpg"
 }];
 
 var answerList = {
     100: [],
-    101: []
 };
 
 var askers = io.of('/ask').on('connection', function(socket) {
