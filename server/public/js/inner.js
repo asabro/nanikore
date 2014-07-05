@@ -29,6 +29,7 @@ $(function() {
 
 
     socket.on('question', function(data, fn) {
+        if (data.length == 0) return false;
         console.log(data, questionList);
         questionList = questionList.concat(data);
         console.log(data, questionList);
