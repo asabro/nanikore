@@ -9,6 +9,8 @@
 #import "OtherAnswerListViewController.h"
 
 @interface OtherAnswerListViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @end
 
@@ -28,6 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
   _imageView.image = self.image;
+  _label.text = self.text;
 }
 
 - (void)didReceiveMemoryWarning

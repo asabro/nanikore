@@ -73,6 +73,7 @@
   OtherAnswerListViewController * vc = [segue destinationViewController];
   vc.answer = answer;
   vc.image = self.image;
+  vc.text = _question[kQuestionText];
 }
 
 /*

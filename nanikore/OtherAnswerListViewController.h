@@ -10,5 +10,6 @@
 
 @interface OtherAnswerListViewController : UIViewController
 @property UIImage * image;
+@property NSString * text;
 @property NSDictionary * answer;
 @end
