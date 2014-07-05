@@ -23,7 +23,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Qth-wu-KfC" kind="modal" id="r44-Vs-1WL"/>
+                                    <segue destination="Qth-wu-KfC" kind="modal" identifier="camera" id="r44-Vs-1WL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -31,7 +31,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5ZD-Fp-mT1"/>
                     <connections>
-                        <segue destination="9PH-Eq-KqQ" kind="push" id="TEZ-oq-Xz5"/>
+                        <segue destination="9PH-Eq-KqQ" kind="push" identifier="ask" id="TEZ-oq-Xz5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -52,10 +52,54 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="3y8-v9-kkC"/>
+                    <connections>
+                        <segue destination="e4d-2b-H3A" kind="push" identifier="seeAnswers" id="dLa-8c-0DB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8Q-cZ-8YS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1226" y="580"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="okE-YT-YvM">
+            <objects>
+                <viewController id="e4d-2b-H3A" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PrF-ju-bv7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ydu-I4-DbF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LMk-A0-QsT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZkV-Pd-HuS"/>
+                    <connections>
+                        <segue destination="ZCl-3e-hrR" kind="push" identifier="evaluation" id="xaW-h3-Ja6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cb8-u2-Lrr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1672" y="580"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="evZ-BT-eMa">
+            <objects>
+                <viewController id="ZCl-3e-hrR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jlW-Q9-GFT"/>
+                        <viewControllerLayoutGuide type="bottom" id="h93-H2-kmG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mWN-nv-Zmc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="man-EO-bzK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cTx-VT-Qyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2108" y="575"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="J4x-UU-R5N">
