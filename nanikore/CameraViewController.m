@@ -33,7 +33,7 @@
 {
   [super viewDidAppear:animated];
   
-//  [self showUIImagePicker];
+  [self showUIImagePicker];
 }
 
 - (void)showUIImagePicker
