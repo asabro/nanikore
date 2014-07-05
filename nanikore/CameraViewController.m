@@ -7,6 +7,8 @@
 //
 
 #import "CameraViewController.h"
+#import "AppDelegate.h"
+#import "Constants.h"
 
 @interface CameraViewController ()
 
@@ -16,10 +18,10 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
+  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+  if (self) {
+  }
+  return self;
 }
 
 - (void)viewDidLoad
@@ -44,7 +46,7 @@
   }
   
   // UIImagePickerControllerのインスタンスを生成
-//  UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+  //  UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
   
   // デリゲートを設定
   self.delegate = self;
@@ -67,8 +69,15 @@
   // Ask画面に遷移
   [self.prevViewController pushAskViewController];
   
-//  // 渡されてきた画像をフォトアルバムに保存
-//  UIImageWriteToSavedPhotosAlbum(image, self, @selector(targetImage:didFinishSavingWithError:contextInfo:), NULL);
+  // 画像をアップロード
+  // Get the selected image.
+  
+  // Convert the image to JPEG data.
+  NSData *imageData = UIImageJPEGRepresentation(image, 0.6);
+  
+  [self processDelegateUpload:imageData];
+  
+//  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 
 // 画像の選択がキャンセルされた時に呼ばれるデリゲートメソッド
@@ -80,33 +89,67 @@
   // キャンセルされたときの処理を記述・・・
 }
 
-// 画像の保存完了時に呼ばれるメソッド
-- (void)targetImage:(UIImage *)image
-didFinishSavingWithError:(NSError *)error
-        contextInfo:(void *)context
+#pragma mark - AmazonServiceRequestDelegate
+
+- (void)processDelegateUpload:(NSData *)imageData
 {
-  if (error) {
-    // 保存失敗時の処理
-  } else {
-    // 保存成功時の処理
-  }
+  // Upload image data.  Remember to set the content type.
+  NSDate * date = [NSDate date];
+  
+  S3PutObjectRequest *por = [[S3PutObjectRequest alloc] initWithKey:date.stringWithISO8061Format
+                                                           inBucket:[Constants pictureBucket]];
+  por.contentType = @"image/jpeg";
+  por.data = imageData;
+  por.delegate = self;
+  
+  // Put the image data into the specified s3 bucket and object.
+  AmazonS3Client * s3 = [AppDelegate s3];
+  [s3 putObject:por];
 }
+
+-(void)request:(AmazonServiceRequest *)request didCompleteWithResponse:(AmazonServiceResponse *)response
+{
+  [self showAlertMessage:@"The image was successfully uploaded." withTitle:@"Upload Completed"];
+  
+  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+}
+
+-(void)request:(AmazonServiceRequest *)request didFailWithError:(NSError *)error
+{
+  NSLog(@"Error: %@", error);
+  [self showAlertMessage:error.description withTitle:@"Upload Error"];
+  
+  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+}
+
+- (void)showAlertMessage:(NSString *)message withTitle:(NSString *)title
+{
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                      message:message
+                                                     delegate:nil
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+  [alertView show];
+}
+
+
+#pragma mark -
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

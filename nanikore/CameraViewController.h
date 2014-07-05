@@ -14,7 +14,8 @@
 
 #import <UIKit/UIKit.h>
 #import "TopViewController.h"
+#import <AWSS3/AWSS3.h>
 
-@interface CameraViewController : UIImagePickerController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface CameraViewController : UIImagePickerController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, AmazonServiceRequestDelegate>
 @property (nonatomic, strong) TopViewController * prevViewController;
 @end
