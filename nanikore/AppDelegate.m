@@ -10,8 +10,8 @@
 #import "Constants.h"
 #import <AWSRuntime/AWSRuntime.h>
 
-#define SERVER_IP @""
-#define SERVER_PORT @"2000"
+#define TEST_SERVER_IP @"49.212.129.143"
+#define TEST_SERVER_PORT @"5000"
 
 @interface AppDelegate ()
 
@@ -19,12 +19,11 @@
 
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // init socketIO
-  _socketIO = [[AZSocketIO alloc] initWithHost:SERVER_IP andPort:SERVER_PORT secure:NO];
+  // init socket IO
+  [self initSocketIO];
   
   // init s3
   [self initS3];
-  
   
   return YES;
 }
@@ -54,17 +53,20 @@
 // ============
 
 - (void)initSocketIO {
-  //  [self.socketIO connectWithSuccess:^{
-  //    NSLog(@"Success connecting!");
-  //    NSError * error;
-  //    [self.socketIO emit:@"authenticate" args:@{@"username": @"ryohei"} error:&error ackWithArgs:^(NSArray *data){
-  //      NSLog(@"%@", data);
-  //      NSLog(@"hello");
-  //    }];
-  //    NSLog(@"%@", error);
-  //  } andFailure:^(NSError *error) {
-  //    NSLog(@"Failure connecting. error: %@", error);
-  //  }];
+  // init socketIO
+  _socketIO = [[AZSocketIO alloc] initWithHost:TEST_SERVER_IP andPort:TEST_SERVER_PORT secure:NO];
+  
+  [self.socketIO connectWithSuccess:^{
+    NSLog(@"Success connecting!");
+//    NSError * error;
+//    [self.socketIO emit:@"authenticate" args:@{@"username": @"ryohei"} error:&error ackWithArgs:^(NSArray *data){
+//      NSLog(@"%@", data);
+//      NSLog(@"hello");
+//    }];
+//    NSLog(@"%@", error);
+  } andFailure:^(NSError *error) {
+    NSLog(@"Failure connecting. error: %@", error);
+  }];
 }
 
 + (AZSocketIO *)socketIO {
