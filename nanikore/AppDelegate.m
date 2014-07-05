@@ -68,6 +68,11 @@
   return delegate.questions;
 }
 
++ (NSMutableArray *)answers {
+  AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+  return delegate.answers;
+}
+
 // ============
 
 - (void)initAskSocketIO {
@@ -129,6 +134,9 @@
 //      [__self__.questions arrayByAddingObjectsFromArray:data[0]];
       __self__.questions = data[0];
 //      NSLog(@"class : %@", NSStringFromClass([data[0][0] class]));
+    }
+    if ([eventName isEqualToString:@"answers"]) {
+      __self__.answers = data[0];
     }
     NSLog(@"loaded questions: %@", __self__.questions);
   }];

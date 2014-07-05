@@ -29,6 +29,8 @@ typedef enum {
 + (NSString *)username;
 @property (strong, nonatomic) NSMutableArray * questions;
 + (NSMutableArray *)questions;
+@property (strong, nonatomic) NSMutableArray * answers;
++ (NSMutableArray *)answers;
 
 // web api
 @property (strong, nonatomic) AZSocketIO * askSocketIO;
