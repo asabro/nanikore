@@ -10,4 +10,6 @@
 
 @interface AskViewController : UIViewController
 @property NSString * imgurl;
+@property NSString * text;
+@property NSDictionary * question;
 @end
