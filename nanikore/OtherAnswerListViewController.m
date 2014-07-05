@@ -75,8 +75,11 @@
 {
   [_timer invalidate];
   AnswerFinishViewController * vc = [segue destinationViewController];
-  vc.answer1 = [AppDelegate answers][0];
-  vc.answer2 = [AppDelegate answers][1];
+  if ([AppDelegate answers].count > 0) {
+    vc.answer1 = [AppDelegate answers][0];
+  } else if ([AppDelegate answers].count > 1) {
+    vc.answer2 = [AppDelegate answers][1];
+  }
 }
 
 #pragma mark - data source
