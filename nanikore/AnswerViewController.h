@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AnswerViewController : UIViewController
-
+@property (nonatomic, strong) NSDictionary * question;
 @end

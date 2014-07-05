@@ -110,10 +110,13 @@
   
   // イベントを受信したときに実行されるBlocks
   [self.socketIO setEventRecievedBlock:^(NSString *eventName, id data) {
-//    NSLog(@"eventName: %@, data: %@", eventName, data);
+    NSLog(@"eventName: %@, data: %@", eventName, data);
     if ([eventName isEqualToString:kEventNameQuestion]){
-      [__self__.questions arrayByAddingObjectsFromArray:data];
+//      [__self__.questions arrayByAddingObjectsFromArray:data];
+      __self__.questions = data;
+      NSLog(@"class : %@", NSStringFromClass([data[0][0] class]));
     }
+//    NSLog(@"loaded questions: %@", __self__.questions);
   }];
   
   // エラーを受信したときに実行されるBlocks

@@ -8,8 +8,12 @@
 
 #import "QuestionListViewController.h"
 #import "AppDelegate.h"
+#import "AnswerViewController.h"
+
+#define kAnswerSegue @"answer"
 
 @interface QuestionListViewController ()
+@property (weak, nonatomic) NSMutableArray * questions;
 
 @end
 
@@ -25,9 +29,20 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-  NSLog(@"hello");
+  [super viewDidLoad];
+  // Do any additional setup after loading the view.
+  _questions = [AppDelegate questions];
+}
+
+- (IBAction)buttonPush:(id)sender{
+  [self performSegueWithIdentifier:kAnswerSegue sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  // データの受け渡し
+  NSUInteger index = 0;
+  AnswerViewController * vc = [segue destinationViewController];
+  vc.question = _questions[index];
 }
 
 - (void)didReceiveMemoryWarning
