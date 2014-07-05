@@ -117,7 +117,7 @@ var askers = io.of('/ask').on('connection', function(socket) {
                 'qid': 'q' + data.qid,
                 'name': 'Ryohei',
                 'text': 'Rubber Duck!',
-                'aid': aid++
+                'aid': answerList[data.qid].length
             };
             answerList[data.qid][answer.aid] = answer;
             askers.to('q' + data.qid).emit('answer', answer);
