@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface OtherAnswerCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *frameImage;
 @property (weak, nonatomic) IBOutlet UILabel *mainLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @end

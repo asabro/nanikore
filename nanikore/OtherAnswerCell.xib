@@ -13,6 +13,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A_judgement(frame).png" translatesAutoresizingMaskIntoConstraints="NO" id="h8a-T8-AOU">
+                        <rect key="frame" x="26" y="2" width="268" height="60"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A_judgement_cell.png" translatesAutoresizingMaskIntoConstraints="NO" id="omq-dY-0vV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,12 +39,14 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="frameImage" destination="h8a-T8-AOU" id="ve9-BI-7jH"/>
                 <outlet property="mainLabel" destination="JEZ-Jh-HAV" id="H9O-vE-aSP"/>
                 <outlet property="nameLabel" destination="I2K-r4-lz7" id="gdN-E1-19g"/>
             </connections>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="A_judgement(frame).png" width="535" height="119"/>
         <image name="A_judgement_cell.png" width="640" height="128"/>
     </resources>
 </document>

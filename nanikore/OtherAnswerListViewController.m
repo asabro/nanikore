@@ -74,6 +74,9 @@
   NSDictionary * answer = [AppDelegate answers][indexPath.row];
   cell.mainLabel.text = answer[kAnswerText];
   cell.nameLabel.text = answer[kAnswerName];
+  if ([answer[kAnswerAID] isEqualToString:_answer[kAnswerAID]]) {
+    cell.frameImage.hidden = NO;
+  }
   return cell;
 }
 @end
