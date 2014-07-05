@@ -8,6 +8,7 @@
 
 #import "TopViewController.h"
 #import "CameraViewController.h"
+#import "AskViewController.h"
 #import "AppDelegate.h"
 
 #define kCameraSegue @"camera"
@@ -37,6 +38,9 @@
   if ([segue.identifier isEqualToString:kCameraSegue]) {
     CameraViewController * vc = segue.destinationViewController;
     vc.prevViewController = self;
+  } else if ([segue.identifier isEqualToString:kAskSegue]) {
+    AskViewController * vc = segue.destinationViewController;
+    vc.imgurl = self.imgurl;
   }
 }
 

@@ -181,17 +181,21 @@
     NSLog(@"***** outstring =%@", returnURL);
 	[self cleanup: returnURL];
     
-    // しんちゃんへ: ここの returnURL にアップロード済みのURLが入っている
-
-    [self showAlertMessage:@"The image was successfully uploaded." withTitle:@"Upload Completed"];
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+  // しんちゃんへ: ここの returnURL にアップロード済みのURLが入っている
+  //    [self showAlertMessage:@"The image was successfully uploaded." withTitle:@"Upload Completed"];
+  
+  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+  
+  [self dismissViewControllerAnimated:YES completion:nil];
+  _prevViewController.imgurl = returnURL;
+  [_prevViewController pushAskViewController];
 }
 
 
 - (void)processDelegateUpload:(NSData *)imageData
 {
   // Upload image data.  Remember to set the content type.
-  NSDate * date = [NSDate date];
+//  NSDate * date = [NSDate date];
  
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"]]; // Localeの指定

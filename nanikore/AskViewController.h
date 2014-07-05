@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AskViewController : UIViewController
-
+@property NSString * imgurl;
 @end

@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 
 @interface AskViewController ()
-
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 @end
 
 @implementation AskViewController
@@ -27,7 +27,9 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view.
-  [self postAsk];
+  NSURLRequest *urlRequest =[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/6324118/toilet.png"]];
+  [_webView loadRequest:urlRequest];
+//  [self postAsk];
   
 }
 

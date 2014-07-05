@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TopViewController : UIViewController
+@property NSString * imgurl;
 - (void) pushAskViewController;
 @end
 
