@@ -54,7 +54,7 @@
 
 - (void)initSocketIO {
   // init socketIO
-  _socketIO = [[AZSocketIO alloc] initWithHost:TEST_SERVER_IP andPort:TEST_SERVER_PORT secure:NO];
+  _socketIO = [[AZSocketIO alloc] initWithHost:TEST_SERVER_IP andPort:TEST_SERVER_PORT secure:NO withNamespace:@"/ask"];
   
   [self.socketIO connectWithSuccess:^{
     NSLog(@"Success connecting!");
