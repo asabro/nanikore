@@ -53,7 +53,7 @@
   self.sourceType = UIImagePickerControllerSourceTypeCamera;
   
   // 画像取得後に編集するかどうか（デフォルトはNO）
-  self.allowsEditing = NO;
+  self.allowsEditing = YES;
 }
 
 // 画像が選択された時に呼ばれるデリゲートメソッド
