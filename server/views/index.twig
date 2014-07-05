@@ -28,9 +28,37 @@ Nani-Colle? by 朝風呂ブラザーズ
 		<input type="file" name="image" /><input type="submit" value="submit">
 	  </form>
  #}  
-<h2>Nani-colle?</h2>
- </div>
+ </div> 
 </div>
+
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+<h3>Nani-colle?</h3>
+<p>外国人の視点からみた「ナニコレ?」を、早打ちクイズというエンターテインメントに転換する2つのアプリです。</p>
+<p>海外から日本に来た観光客向けアプリ「Nani-colle?」は、「和式便器」「立ち食い蕎麦」「メイド喫茶」など、「なにこれ?」「どうしたらいいの?」な日本の光景をカメラで取ってアップロードすると、1分以内に回答が届く日本観光お助けアプリ。日本人向けの「ナニコレ?」は、日本や日本文化に関する写真と質問に対して、素早く回答する早打ちクイズです。</p>
+
+<p>このアプリは<a href="http://www.spajam.jp/">SMARTPHONE APP JAM</a> 2014 本戦出場チーム「朝風呂ブラザーズ」が、2014年6月4日〜6日の36時間で開発したものです。</p>
+
+<h4>Webデモ</h4>
+
+<p>早打ちクイズ「ナニコレ?」を体験していただけるWebデモをこのサイトで用意しています。サーバの実装には express + socket.io を使っています。最終プレゼンテーションでは会場や審査員の方々にクイズを楽しんでいただく予定です。 (プレゼンテーションの内容は<a href="https://www.dropbox.com/s/hlv8beohzxe33sl/asabro-spajam2014.pdf">こちらから</a>ダウンロードできます。)
+</a></p>
+
+
+<h4>実装</h4>
+<p>2つのアプリは iOS 向けに実装しました。どちらも機能はほぼ完全に実装していますが、クイズの回答者が質問者から評価を受け取る部分のみ未実装です。サーバのバックエンドは express + socket.io を用い、100名以上の接続を実証確認しています。SPAJAM2014の最終プレゼンテーションでも同時接続のパフォーマンスを実証します。</p>
+
+<p>ソースコードは<a href="https://github.com/asabro/nanikore" target="_blank">github</a>で公開しています。</p>
+
+
+<h4></h4>
+<p>伏見遼平, 村上晋太郎, 宗像悠里 (朝風呂ブラザーズ)</p>	
+</div>
+	<div class="col-md-2"></div>
+
+</div>
+
 
 
 {% endblock %}
