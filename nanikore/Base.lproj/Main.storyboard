@@ -261,6 +261,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="DUn-mD-oKf"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xYs-Ik-tFM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,7 +276,7 @@
                         <viewControllerLayoutGuide type="bottom" id="6bp-VR-bey"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NjX-Ei-2ds">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A_ready.png" translatesAutoresizingMaskIntoConstraints="NO" id="EGh-5v-9dK">
@@ -293,6 +294,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="g2B-5d-4w3"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="label" destination="HBJ-da-gR2" id="bsl-S2-h0H"/>
                         <segue destination="Pjz-Y8-Hy6" kind="push" identifier="answer" id="8zf-jy-ZNY"/>
@@ -339,7 +341,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vXi-3x-c4r"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="J0p-i3-GBn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A_keyboard.png" translatesAutoresizingMaskIntoConstraints="NO" id="Heo-O0-hGd">
@@ -414,7 +416,7 @@
                         <viewControllerLayoutGuide type="bottom" id="IHp-bD-dcg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yv4-NL-oKp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A_judgement(background).png" translatesAutoresizingMaskIntoConstraints="NO" id="iOq-Td-l70" customClass="A_ju">
@@ -432,7 +434,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aOj-3x-bHG">
-                                <rect key="frame" x="0.0" y="345" width="320" height="135"/>
+                                <rect key="frame" x="0.0" y="345" width="320" height="223"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -468,7 +470,7 @@
                         <viewControllerLayoutGuide type="bottom" id="egR-VT-3pt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UC2-bm-b0q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A_arigatou.png" translatesAutoresizingMaskIntoConstraints="NO" id="8cP-7J-IRQ">
