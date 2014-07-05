@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SeeAnswerViewController : UIViewController
-
+@property (nonatomic, strong) NSMutableArray * answers;
 @end

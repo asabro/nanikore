@@ -71,6 +71,7 @@
 // ============
 
 - (void)initAskSocketIO {
+  __block AppDelegate * __self__ = self;
   // init socketIO
   _askSocketIO = [[AZSocketIO alloc] initWithHost:TEST_SERVER_IP andPort:TEST_SERVER_PORT secure:NO withNamespace:@"/ask"];
   
@@ -82,6 +83,11 @@
   // イベントを受信したときに実行されるBlocks
   [self.askSocketIO setEventRecievedBlock:^(NSString *eventName, id data) {
     NSLog(@"eventName: %@, data: %@", eventName, data);
+    if ([eventName isEqualToString:@"answer"]) {
+      if (__self__.seeAnswerViewController) {
+        [__self__.seeAnswerViewController.answers addObject:data];
+      }
+    }
   }];
   
   // エラーを受信したときに実行されるBlocks

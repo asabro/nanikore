@@ -10,6 +10,7 @@
 #import <AZSocketIO.h>
 #import <AWSS3/AWSS3.h>
 #import "QuestionListViewController.h"
+#import "SeeAnswerViewController.h"
 
 typedef enum {
     GrandCentralDispatch,
@@ -20,6 +21,9 @@ typedef enum {
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+// viewControllers
+@property (weak, nonatomic) SeeAnswerViewController * seeAnswerViewController;
+
 // data
 @property (strong, nonatomic) NSString * username;
 + (NSString *)username;
