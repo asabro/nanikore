@@ -83,9 +83,11 @@
   // イベントを受信したときに実行されるBlocks
   [self.askSocketIO setEventRecievedBlock:^(NSString *eventName, id data) {
     NSLog(@"eventName: %@, data: %@", eventName, data);
+    // 解答の受信
     if ([eventName isEqualToString:@"answer"]) {
       if (__self__.seeAnswerViewController) {
-        [__self__.seeAnswerViewController.answers addObject:data];
+        [__self__.seeAnswerViewController.answers addObject:data[0]];
+        [__self__.seeAnswerViewController.tableView reloadData];
       }
     }
   }];

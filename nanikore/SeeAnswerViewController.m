@@ -12,7 +12,6 @@
 #import "AnswerKeys.h"
 
 @interface SeeAnswerViewController ()
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation SeeAnswerViewController
@@ -31,26 +30,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
   
-//  _answers = [NSMutableArray array];
-  NSArray * answers =
-  @[
-    @{kAnswerText: @"といれ",
-      kAnswerQID: @"123",
-      kAnswerName: @"murakami"},
-    @{kAnswerText: @"といれだよ",
-      kAnswerQID: @"123",
-      kAnswerName: @"murakami"},
-    @{kAnswerText: @"といれっと",
-      kAnswerQID: @"123",
-      kAnswerName: @"murakami"},
-    @{kAnswerText: @"といれ〜",
-      kAnswerQID: @"123",
-      kAnswerName: @"murakami"},
-    @{kAnswerText: @"といれtれ",
-      kAnswerQID: @"123",
-      kAnswerName: @"murakami"},
-    ];
-  _answers = [answers mutableCopy];
+  _answers = [NSMutableArray array];
+//  NSArray * answers =
+//  @[
+//    @{kAnswerText: @"といれ",
+//      kAnswerQID: @"123",
+//      kAnswerName: @"murakami"},
+//    @{kAnswerText: @"といれだよ",
+//      kAnswerQID: @"123",
+//      kAnswerName: @"murakami"},
+//    @{kAnswerText: @"といれっと",
+//      kAnswerQID: @"123",
+//      kAnswerName: @"murakami"},
+//    @{kAnswerText: @"といれ〜",
+//      kAnswerQID: @"123",
+//      kAnswerName: @"murakami"},
+//    @{kAnswerText: @"といれtれ",
+//      kAnswerQID: @"123",
+//      kAnswerName: @"murakami"},
+//    ];
+//  _answers = [answers mutableCopy];
   // データ受け取りの準備
   AppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
   appDelegate.seeAnswerViewController = self;
