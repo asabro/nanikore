@@ -26,8 +26,8 @@ typedef enum {
 
 // web api
 @property (strong, nonatomic) AZSocketIO * socketIO;
-@property (nonatomic) UploadType uplooadType;
-@property (nonatomic, strong) AmazonS3Client *s3;
+@property (nonatomic) UploadType uploadType;
+@property (nonatomic, retain) AmazonS3Client *s3;
 
 +(AZSocketIO *) socketIO;
 +(AmazonS3Client *) s3;

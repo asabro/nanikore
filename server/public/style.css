@@ -1,0 +1,21 @@
+body {
+    padding-top: 50px;
+    font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+li#emotion-status-li-1{	color: #e74c3c;}
+li#emotion-status-li-2{	color: #2980b9;}
+li#emotion-status-li-3{	color: #f39c12;}
+li#emotion-status-li-4{	color: #27ae60;}
+li#emotion-status-li-5{	color: #8e44ad;}
+
+
+#wireframe{
+	width: 100%;
+	height: 888px;
+	border: 0px;
+
+}
+
+
+
