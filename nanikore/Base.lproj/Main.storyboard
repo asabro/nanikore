@@ -196,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="892" y="1806"/>
         </scene>
-        <!--Ask List View Controller-->
+        <!--Question List View Controller-->
         <scene sceneID="ofg-ZS-XtN">
             <objects>
-                <viewController id="5TX-hC-scx" customClass="AskListViewController" sceneMemberID="viewController">
+                <viewController id="5TX-hC-scx" customClass="QuestionListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LgC-C9-pFf"/>
                         <viewControllerLayoutGuide type="bottom" id="Odp-Kz-Jmf"/>

@@ -15,7 +15,7 @@
 		6CD62D141967E6DF00E904DD /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D131967E6DF00E904DD /* Constants.m */; };
 		6CD62D2719680D6B00E904DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D2619680D6B00E904DD /* ViewController.m */; };
 		6CD62D2C1968102100E904DD /* AnswerTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D2B1968102100E904DD /* AnswerTopViewController.m */; };
-		6CD62D2F1968114F00E904DD /* AskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D2E1968114F00E904DD /* AskListViewController.m */; };
+		6CD62D2F1968114F00E904DD /* QuestionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D2E1968114F00E904DD /* QuestionListViewController.m */; };
 		6CD62D321968119F00E904DD /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D311968119F00E904DD /* AnswerViewController.m */; };
 		6CD62D35196811B900E904DD /* OtherAnswerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D34196811B900E904DD /* OtherAnswerListViewController.m */; };
 		6CD62D38196811CF00E904DD /* AnswerFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D37196811CF00E904DD /* AnswerFinishViewController.m */; };
@@ -56,8 +56,8 @@
 		6CD62D2619680D6B00E904DD /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6CD62D2A1968102100E904DD /* AnswerTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerTopViewController.h; sourceTree = "<group>"; };
 		6CD62D2B1968102100E904DD /* AnswerTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerTopViewController.m; sourceTree = "<group>"; };
-		6CD62D2D1968114E00E904DD /* AskListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskListViewController.h; sourceTree = "<group>"; };
-		6CD62D2E1968114F00E904DD /* AskListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskListViewController.m; sourceTree = "<group>"; };
+		6CD62D2D1968114E00E904DD /* QuestionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListViewController.h; sourceTree = "<group>"; };
+		6CD62D2E1968114F00E904DD /* QuestionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListViewController.m; sourceTree = "<group>"; };
 		6CD62D301968119F00E904DD /* AnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerViewController.h; sourceTree = "<group>"; };
 		6CD62D311968119F00E904DD /* AnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerViewController.m; sourceTree = "<group>"; };
 		6CD62D33196811B900E904DD /* OtherAnswerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherAnswerListViewController.h; sourceTree = "<group>"; };
@@ -157,8 +157,8 @@
 			children = (
 				6CD62D2A1968102100E904DD /* AnswerTopViewController.h */,
 				6CD62D2B1968102100E904DD /* AnswerTopViewController.m */,
-				6CD62D2D1968114E00E904DD /* AskListViewController.h */,
-				6CD62D2E1968114F00E904DD /* AskListViewController.m */,
+				6CD62D2D1968114E00E904DD /* QuestionListViewController.h */,
+				6CD62D2E1968114F00E904DD /* QuestionListViewController.m */,
 				6CD62D301968119F00E904DD /* AnswerViewController.h */,
 				6CD62D311968119F00E904DD /* AnswerViewController.m */,
 				6CD62D33196811B900E904DD /* OtherAnswerListViewController.h */,
@@ -388,7 +388,7 @@
 				6CD62D141967E6DF00E904DD /* Constants.m in Sources */,
 				6CD62D111967E38F00E904DD /* EvaluateViewController.m in Sources */,
 				F9B798B11967B7A000D97DDE /* main.m in Sources */,
-				6CD62D2F1968114F00E904DD /* AskListViewController.m in Sources */,
+				6CD62D2F1968114F00E904DD /* QuestionListViewController.m in Sources */,
 				6CD62D35196811B900E904DD /* OtherAnswerListViewController.m in Sources */,
 				6CD62D38196811CF00E904DD /* AnswerFinishViewController.m in Sources */,
 				6CD62D0E1967E38600E904DD /* SeeAnswerViewController.m in Sources */,

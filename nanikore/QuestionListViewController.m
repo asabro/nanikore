@@ -6,14 +6,14 @@
 //  Copyright (c) 2014年 nae-lab. All rights reserved.
 //
 
-#import "AskListViewController.h"
+#import "QuestionListViewController.h"
 #import "AppDelegate.h"
 
-@interface AskListViewController ()
+@interface QuestionListViewController ()
 
 @end
 
-@implementation AskListViewController
+@implementation QuestionListViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

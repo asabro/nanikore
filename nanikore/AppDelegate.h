@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AZSocketIO.h>
 #import <AWSS3/AWSS3.h>
-#import "AskListViewController.h"
+#import "QuestionListViewController.h"
 
 typedef enum {
     GrandCentralDispatch,

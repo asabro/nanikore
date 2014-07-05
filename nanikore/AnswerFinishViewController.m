@@ -43,7 +43,7 @@
 
 - (void)anserNextQuestion {
   NSInteger count = 1;
-  AskListViewController *vc = [self.navigationController.viewControllers objectAtIndex:count];
+  QuestionListViewController *vc = [self.navigationController.viewControllers objectAtIndex:count];
   [self.navigationController popToViewController:vc animated:YES];
 }
 
