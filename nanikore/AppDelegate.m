@@ -7,18 +7,33 @@
 //
 
 #import "AppDelegate.h"
+#define SERVER_IP @""
+#define SERVER_PORT @"2000"
 
 @interface AppDelegate ()
-            
 
 @end
 
 @implementation AppDelegate
-            
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    return YES;
+  // init socketIO
+  _socketIO = [[AZSocketIO alloc] initWithHost:SERVER_IP andPort:SERVER_PORT secure:NO];
+  
+  [self.socketIO connectWithSuccess:^{
+    NSLog(@"Success connecting!");
+//    NSError * error;
+//    [self.socketIO emit:@"authenticate" args:@{@"username": @"ryohei"} error:&error ackWithArgs:^(NSArray *data){
+//      NSLog(@"%@", data);
+//      NSLog(@"hello");
+//    }];
+    
+//    NSLog(@"%@", error);
+    
+  } andFailure:^(NSError *error) {
+    NSLog(@"Failure connecting. error: %@", error);
+  }];
+  
+  return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
