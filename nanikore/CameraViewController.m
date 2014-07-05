@@ -11,7 +11,7 @@
 #import "Constants.h"
 
 @interface CameraViewController ()
-
+@property UIImage * uiimage;
 @end
 
 @implementation CameraViewController
@@ -86,7 +86,8 @@
 {
     // Get the selected image.
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    
+  _uiimage = image;
+  
     // Convert the image to JPEG data.
     NSData *imageData = UIImageJPEGRepresentation(image, 0.6);
     self.imageData = imageData;
@@ -156,7 +157,7 @@
 	
 	NSData *postData = [self generateFormDataFromPostDictionary:post_dict];
 	
-    NSString *baseurl = @"http://nani-colle.com/upload";
+    NSString *baseurl = @"http://49.212.129.143:5000/upload";
     NSURL *url = [NSURL URLWithString:baseurl];
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
     if (!urlRequest) NOTIFY_AND_LEAVE(@"Error creating the URL Request");
@@ -181,17 +182,22 @@
     NSLog(@"***** outstring =%@", returnURL);
 	[self cleanup: returnURL];
     
-    // しんちゃんへ: ここの returnURL にアップロード済みのURLが入っている
-
-    [self showAlertMessage:@"The image was successfully uploaded." withTitle:@"Upload Completed"];
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+  // しんちゃんへ: ここの returnURL にアップロード済みのURLが入っている
+  //    [self showAlertMessage:@"The image was successfully uploaded." withTitle:@"Upload Completed"];
+  
+  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+  
+  [self dismissViewControllerAnimated:YES completion:nil];
+  _prevViewController.imgurl = returnURL;
+  _prevViewController.image = _uiimage;
+  [_prevViewController pushAskViewController];
 }
 
 
 - (void)processDelegateUpload:(NSData *)imageData
 {
   // Upload image data.  Remember to set the content type.
-  NSDate * date = [NSDate date];
+//  NSDate * date = [NSDate date];
  
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"]]; // Localeの指定

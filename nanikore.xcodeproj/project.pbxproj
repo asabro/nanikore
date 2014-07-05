@@ -13,6 +13,23 @@
 		6CD62D0E1967E38600E904DD /* SeeAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D0D1967E38600E904DD /* SeeAnswerViewController.m */; };
 		6CD62D111967E38F00E904DD /* EvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D101967E38F00E904DD /* EvaluateViewController.m */; };
 		6CD62D141967E6DF00E904DD /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D131967E6DF00E904DD /* Constants.m */; };
+		6CD62D2719680D6B00E904DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D2619680D6B00E904DD /* ViewController.m */; };
+		6CD62D2C1968102100E904DD /* AnswerTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D2B1968102100E904DD /* AnswerTopViewController.m */; };
+		6CD62D2F1968114F00E904DD /* QuestionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D2E1968114F00E904DD /* QuestionListViewController.m */; };
+		6CD62D321968119F00E904DD /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D311968119F00E904DD /* AnswerViewController.m */; };
+		6CD62D35196811B900E904DD /* OtherAnswerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D34196811B900E904DD /* OtherAnswerListViewController.m */; };
+		6CD62D38196811CF00E904DD /* AnswerFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D37196811CF00E904DD /* AnswerFinishViewController.m */; };
+		6CD62D3E1968343900E904DD /* SeeAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D3D1968343900E904DD /* SeeAnswerCell.m */; };
+		6CD62D4019683AC800E904DD /* SeeAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D3F19683AC800E904DD /* SeeAnswerCell.xib */; };
+		6CD62D43196851E300E904DD /* CountDownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D42196851E300E904DD /* CountDownViewController.m */; };
+		6CD62D461968599100E904DD /* Q_question.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D451968599100E904DD /* Q_question.png */; };
+		6CD62D481968627D00E904DD /* Q_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D471968627D00E904DD /* Q_top.png */; };
+		6CD62D4A1968640200E904DD /* Q_collectA(gray).png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D491968640100E904DD /* Q_collectA(gray).png */; };
+		6CD62D4C196866AE00E904DD /* Q_collectA_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D4B196866AE00E904DD /* Q_collectA_cell.png */; };
+		6CD62D5019686D5D00E904DD /* Q_selectA.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D4F19686D5D00E904DD /* Q_selectA.png */; };
+		6CD62D571968728800E904DD /* Q_silver.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D551968728800E904DD /* Q_silver.png */; };
+		6CD62D581968728800E904DD /* Q_gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D561968728800E904DD /* Q_gold.png */; };
+		6CD62D5A196875C700E904DD /* Q_arigato_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D59196875C700E904DD /* Q_arigato_button.png */; };
 		F9B798B11967B7A000D97DDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B01967B7A000D97DDE /* main.m */; };
 		F9B798B41967B7A000D97DDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B31967B7A000D97DDE /* AppDelegate.m */; };
 		F9B798B71967B7A000D97DDE /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B61967B7A000D97DDE /* TopViewController.m */; };
@@ -46,6 +63,33 @@
 		6CD62D131967E6DF00E904DD /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		6CD62D191967EC3D00E904DD /* AWSRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSRuntime.framework; path = "../../Downloads/aws-ios-sdk-1.7.1/AWSRuntime.framework"; sourceTree = "<group>"; };
 		6CD62D1A1967EC3D00E904DD /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = "../../Downloads/aws-ios-sdk-1.7.1/AWSS3.framework"; sourceTree = "<group>"; };
+		6CD62D2519680D6B00E904DD /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6CD62D2619680D6B00E904DD /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6CD62D2A1968102100E904DD /* AnswerTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerTopViewController.h; sourceTree = "<group>"; };
+		6CD62D2B1968102100E904DD /* AnswerTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerTopViewController.m; sourceTree = "<group>"; };
+		6CD62D2D1968114E00E904DD /* QuestionListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionListViewController.h; sourceTree = "<group>"; };
+		6CD62D2E1968114F00E904DD /* QuestionListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionListViewController.m; sourceTree = "<group>"; };
+		6CD62D301968119F00E904DD /* AnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerViewController.h; sourceTree = "<group>"; };
+		6CD62D311968119F00E904DD /* AnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerViewController.m; sourceTree = "<group>"; };
+		6CD62D33196811B900E904DD /* OtherAnswerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherAnswerListViewController.h; sourceTree = "<group>"; };
+		6CD62D34196811B900E904DD /* OtherAnswerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherAnswerListViewController.m; sourceTree = "<group>"; };
+		6CD62D36196811CF00E904DD /* AnswerFinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerFinishViewController.h; sourceTree = "<group>"; };
+		6CD62D37196811CF00E904DD /* AnswerFinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerFinishViewController.m; sourceTree = "<group>"; };
+		6CD62D3A1968254700E904DD /* QuestionKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionKeys.h; sourceTree = "<group>"; };
+		6CD62D3B196827E100E904DD /* AnswerKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnswerKeys.h; sourceTree = "<group>"; };
+		6CD62D3C1968343900E904DD /* SeeAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeAnswerCell.h; sourceTree = "<group>"; };
+		6CD62D3D1968343900E904DD /* SeeAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeAnswerCell.m; sourceTree = "<group>"; };
+		6CD62D3F19683AC800E904DD /* SeeAnswerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeeAnswerCell.xib; sourceTree = "<group>"; };
+		6CD62D41196851E300E904DD /* CountDownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownViewController.h; sourceTree = "<group>"; };
+		6CD62D42196851E300E904DD /* CountDownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownViewController.m; sourceTree = "<group>"; };
+		6CD62D451968599100E904DD /* Q_question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Q_question.png; sourceTree = "<group>"; };
+		6CD62D471968627D00E904DD /* Q_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Q_top.png; sourceTree = "<group>"; };
+		6CD62D491968640100E904DD /* Q_collectA(gray).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Q_collectA(gray).png"; sourceTree = "<group>"; };
+		6CD62D4B196866AE00E904DD /* Q_collectA_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Q_collectA_cell.png; sourceTree = "<group>"; };
+		6CD62D4F19686D5D00E904DD /* Q_selectA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Q_selectA.png; sourceTree = "<group>"; };
+		6CD62D551968728800E904DD /* Q_silver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Q_silver.png; sourceTree = "<group>"; };
+		6CD62D561968728800E904DD /* Q_gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Q_gold.png; sourceTree = "<group>"; };
+		6CD62D59196875C700E904DD /* Q_arigato_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Q_arigato_button.png; sourceTree = "<group>"; };
 		B08DDD4CEC294F42BCBB34BB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C5FE27FD02B44B44B3BED450 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B798AB1967B7A000D97DDE /* nanikore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nanikore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +152,9 @@
 			children = (
 				6CD62D0C1967E38600E904DD /* SeeAnswerViewController.h */,
 				6CD62D0D1967E38600E904DD /* SeeAnswerViewController.m */,
+				6CD62D3C1968343900E904DD /* SeeAnswerCell.h */,
+				6CD62D3D1968343900E904DD /* SeeAnswerCell.m */,
+				6CD62D3F19683AC800E904DD /* SeeAnswerCell.xib */,
 			);
 			name = SeeAnswer;
 			sourceTree = "<group>";
@@ -119,6 +166,53 @@
 				6CD62D101967E38F00E904DD /* EvaluateViewController.m */,
 			);
 			name = Evaluate;
+			sourceTree = "<group>";
+		};
+		6CD62D2819680FDA00E904DD /* AskMode */ = {
+			isa = PBXGroup;
+			children = (
+				F9B798B51967B7A000D97DDE /* TopViewController.h */,
+				F9B798B61967B7A000D97DDE /* TopViewController.m */,
+				6CD62D081967E36800E904DD /* Evaluate */,
+				6CD62D071967E35D00E904DD /* SeeAnswer */,
+				6CD62D061967E35800E904DD /* Ask */,
+				6C3B703A1967CE1B00B67EE7 /* Camera */,
+			);
+			name = AskMode;
+			sourceTree = "<group>";
+		};
+		6CD62D2919680FFA00E904DD /* AnswerMode */ = {
+			isa = PBXGroup;
+			children = (
+				6CD62D2A1968102100E904DD /* AnswerTopViewController.h */,
+				6CD62D2B1968102100E904DD /* AnswerTopViewController.m */,
+				6CD62D2D1968114E00E904DD /* QuestionListViewController.h */,
+				6CD62D2E1968114F00E904DD /* QuestionListViewController.m */,
+				6CD62D301968119F00E904DD /* AnswerViewController.h */,
+				6CD62D311968119F00E904DD /* AnswerViewController.m */,
+				6CD62D33196811B900E904DD /* OtherAnswerListViewController.h */,
+				6CD62D34196811B900E904DD /* OtherAnswerListViewController.m */,
+				6CD62D36196811CF00E904DD /* AnswerFinishViewController.h */,
+				6CD62D37196811CF00E904DD /* AnswerFinishViewController.m */,
+				6CD62D41196851E300E904DD /* CountDownViewController.h */,
+				6CD62D42196851E300E904DD /* CountDownViewController.m */,
+			);
+			name = AnswerMode;
+			sourceTree = "<group>";
+		};
+		6CD62D441968597D00E904DD /* images */ = {
+			isa = PBXGroup;
+			children = (
+				6CD62D59196875C700E904DD /* Q_arigato_button.png */,
+				6CD62D551968728800E904DD /* Q_silver.png */,
+				6CD62D561968728800E904DD /* Q_gold.png */,
+				6CD62D4F19686D5D00E904DD /* Q_selectA.png */,
+				6CD62D4B196866AE00E904DD /* Q_collectA_cell.png */,
+				6CD62D491968640100E904DD /* Q_collectA(gray).png */,
+				6CD62D471968627D00E904DD /* Q_top.png */,
+				6CD62D451968599100E904DD /* Q_question.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 		D2D1E9B3BF5444D2B43E4545 /* Frameworks */ = {
@@ -156,19 +250,20 @@
 		F9B798AD1967B7A000D97DDE /* nanikore */ = {
 			isa = PBXGroup;
 			children = (
+				6CD62D441968597D00E904DD /* images */,
+				6CD62D3A1968254700E904DD /* QuestionKeys.h */,
+				6CD62D2919680FFA00E904DD /* AnswerMode */,
+				6CD62D2819680FDA00E904DD /* AskMode */,
 				6CD62D121967E6DF00E904DD /* Constants.h */,
 				6CD62D131967E6DF00E904DD /* Constants.m */,
-				6CD62D081967E36800E904DD /* Evaluate */,
-				6CD62D071967E35D00E904DD /* SeeAnswer */,
-				6CD62D061967E35800E904DD /* Ask */,
-				6C3B703A1967CE1B00B67EE7 /* Camera */,
 				F9B798B21967B7A000D97DDE /* AppDelegate.h */,
 				F9B798B31967B7A000D97DDE /* AppDelegate.m */,
-				F9B798B51967B7A000D97DDE /* TopViewController.h */,
-				F9B798B61967B7A000D97DDE /* TopViewController.m */,
 				F9B798B81967B7A000D97DDE /* Main.storyboard */,
 				F9B798BB1967B7A000D97DDE /* Images.xcassets */,
 				F9B798AE1967B7A000D97DDE /* Supporting Files */,
+				6CD62D2519680D6B00E904DD /* ViewController.h */,
+				6CD62D2619680D6B00E904DD /* ViewController.m */,
+				6CD62D3B196827E100E904DD /* AnswerKeys.h */,
 			);
 			path = nanikore;
 			sourceTree = "<group>";
@@ -281,8 +376,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CD62D571968728800E904DD /* Q_silver.png in Resources */,
+				6CD62D581968728800E904DD /* Q_gold.png in Resources */,
 				F9B798BA1967B7A000D97DDE /* Main.storyboard in Resources */,
+				6CD62D5019686D5D00E904DD /* Q_selectA.png in Resources */,
+				6CD62D461968599100E904DD /* Q_question.png in Resources */,
+				6CD62D4A1968640200E904DD /* Q_collectA(gray).png in Resources */,
+				6CD62D4C196866AE00E904DD /* Q_collectA_cell.png in Resources */,
+				6CD62D4019683AC800E904DD /* SeeAnswerCell.xib in Resources */,
 				F9B798BC1967B7A000D97DDE /* Images.xcassets in Resources */,
+				6CD62D481968627D00E904DD /* Q_top.png in Resources */,
+				6CD62D5A196875C700E904DD /* Q_arigato_button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,12 +437,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CD62D2719680D6B00E904DD /* ViewController.m in Sources */,
+				6CD62D3E1968343900E904DD /* SeeAnswerCell.m in Sources */,
 				F9B798B71967B7A000D97DDE /* TopViewController.m in Sources */,
+				6CD62D2C1968102100E904DD /* AnswerTopViewController.m in Sources */,
+				6CD62D43196851E300E904DD /* CountDownViewController.m in Sources */,
 				6C3B703D1967CE4000B67EE7 /* CameraViewController.m in Sources */,
+				6CD62D321968119F00E904DD /* AnswerViewController.m in Sources */,
 				F9B798B41967B7A000D97DDE /* AppDelegate.m in Sources */,
 				6CD62D141967E6DF00E904DD /* Constants.m in Sources */,
 				6CD62D111967E38F00E904DD /* EvaluateViewController.m in Sources */,
 				F9B798B11967B7A000D97DDE /* main.m in Sources */,
+				6CD62D2F1968114F00E904DD /* QuestionListViewController.m in Sources */,
+				6CD62D35196811B900E904DD /* OtherAnswerListViewController.m in Sources */,
+				6CD62D38196811CF00E904DD /* AnswerFinishViewController.m in Sources */,
 				6CD62D0E1967E38600E904DD /* SeeAnswerViewController.m in Sources */,
 				6CD62D0B1967E37A00E904DD /* AskViewController.m in Sources */,
 			);

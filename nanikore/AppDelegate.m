@@ -9,15 +9,9 @@
 #import "AppDelegate.h"
 #import "Constants.h"
 #import <AWSRuntime/AWSRuntime.h>
-#define SERVER_IP @""
-#define SERVER_PORT @"2000"
 
-void uncaughtExceptionHandler(NSException *exception) {
-    NSLog(@"CRASH: %@", exception);
-    NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
-    // Internal error reporting
-}
-
+#define TEST_SERVER_IP @"49.212.129.143"
+#define TEST_SERVER_PORT @"5000"
 
 @interface AppDelegate ()
 
@@ -25,13 +19,16 @@ void uncaughtExceptionHandler(NSException *exception) {
 
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // init socketIO
-    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
-    
-    _socketIO = [[AZSocketIO alloc] initWithHost:SERVER_IP andPort:SERVER_PORT secure:NO];
-    // Create the picture bucket.
-    
-    // init s3
+  // init socket IO
+  [self initAskSocketIO];
+  [self initAnswerSocketIO];
+  _username = @"hogetarou";
+  
+  _questions = [NSMutableArray array];
+  
+  [self initAnswerSocketIO];
+  
+  // init s3
   [self initS3];
   return YES;
 }
@@ -58,25 +55,109 @@ void uncaughtExceptionHandler(NSException *exception) {
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-// ============
-
-- (void)initSocketIO {
-  //  [self.socketIO connectWithSuccess:^{
-  //    NSLog(@"Success connecting!");
-  //    NSError * error;
-  //    [self.socketIO emit:@"authenticate" args:@{@"username": @"ryohei"} error:&error ackWithArgs:^(NSArray *data){
-  //      NSLog(@"%@", data);
-  //      NSLog(@"hello");
-  //    }];
-  //    NSLog(@"%@", error);
-  //  } andFailure:^(NSError *error) {
-  //    NSLog(@"Failure connecting. error: %@", error);
-  //  }];
+// ------------
+//    data
+// ------------
++ (NSString *)username {
+  AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+  return delegate.username;
 }
 
-+ (AZSocketIO *)socketIO {
++ (NSMutableArray *)questions {
+  AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+  return delegate.questions;
+}
+
+// ============
+
+- (void)initAskSocketIO {
+  __block AppDelegate * __self__ = self;
+  // init socketIO
+  _askSocketIO = [[AZSocketIO alloc] initWithHost:TEST_SERVER_IP andPort:TEST_SERVER_PORT secure:NO withNamespace:@"/ask"];
+  
+  // メッセージを受信した時に実行されるBlocks
+  [self.askSocketIO setMessageRecievedBlock:^(id data) {
+    NSLog(@"data: %@", data);
+  }];
+  
+  // イベントを受信したときに実行されるBlocks
+  [self.askSocketIO setEventRecievedBlock:^(NSString *eventName, id data) {
+    NSLog(@"eventName: %@, data: %@", eventName, data);
+    // 解答の受信
+    if ([eventName isEqualToString:@"answer"]) {
+      if (__self__.seeAnswerViewController) {
+        [__self__.seeAnswerViewController.answers addObject:data[0]];
+        [__self__.seeAnswerViewController.tableView reloadData];
+      }
+    }
+  }];
+  
+  // エラーを受信したときに実行されるBlocks
+  [self.askSocketIO setErrorBlock:^(NSError *error) {
+    NSLog(@"error: %@", error);
+  }];
+  
+  // 切断されたときに実行されるBlocks
+  [self.askSocketIO setDisconnectedBlock:^{
+    NSLog(@"Disconnected!");
+  }];
+  
+  [self.askSocketIO connectWithSuccess:^{
+    NSLog(@"Success connecting!");
+  } andFailure:^(NSError *error) {
+    NSLog(@"Failure connecting. error: %@", error);
+  }];
+}
+
+#define kEventNameQuestion @"question"
+
+- (void)initAnswerSocketIO {
+  // init socketIO
+  _answerSocketIO = [[AZSocketIO alloc] initWithHost:TEST_SERVER_IP andPort:TEST_SERVER_PORT secure:NO withNamespace:@"/answer"];
+  
+  __block AppDelegate * __self__ = self;
+  
+  // メッセージを受信した時に実行されるBlocks
+  [self.answerSocketIO setMessageRecievedBlock:^(id data) {
+    NSLog(@"data: %@", data);
+  }];
+  
+  // イベントを受信したときに実行されるBlocks
+  [self.answerSocketIO setEventRecievedBlock:^(NSString *eventName, id data) {
+    NSLog(@"eventName: %@, data: %@", eventName, data);
+    if ([eventName isEqualToString:kEventNameQuestion]){
+//      [__self__.questions arrayByAddingObjectsFromArray:data[0]];
+      __self__.questions = data[0];
+//      NSLog(@"class : %@", NSStringFromClass([data[0][0] class]));
+    }
+    NSLog(@"loaded questions: %@", __self__.questions);
+  }];
+  
+  // エラーを受信したときに実行されるBlocks
+  [self.answerSocketIO setErrorBlock:^(NSError *error) {
+    NSLog(@"error: %@", error);
+  }];
+  
+  // 切断されたときに実行されるBlocks
+  [self.answerSocketIO setDisconnectedBlock:^{
+    NSLog(@"Disconnected!");
+  }];
+  
+  [self.answerSocketIO connectWithSuccess:^{
+    NSLog(@"Success connecting!");
+  } andFailure:^(NSError *error) {
+    NSLog(@"Failure connecting. error: %@", error);
+  }];
+}
+
++ (AZSocketIO *)askSocketIO {
   AppDelegate * delegate = [UIApplication sharedApplication].delegate;
-  return delegate.socketIO;
+  return delegate.askSocketIO;
+}
+
++ (AZSocketIO *)answerSocketIO {
+  AppDelegate * delegate = [UIApplication sharedApplication].delegate;
+  return delegate.answerSocketIO;
 }
 
 - (void)initS3 {

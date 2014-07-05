@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SeeAnswerViewController : UIViewController
-
+@interface SeeAnswerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, strong) NSMutableArray * answers;
+@property (nonatomic, strong) UIImage * image;
+@property (nonatomic, strong) NSNumber * goldAid;
+@property (nonatomic, strong) NSNumber * silverAid;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
