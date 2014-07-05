@@ -95,11 +95,11 @@
   NSDictionary * answer = [AppDelegate answers][indexPath.row];
   cell.mainLabel.text = answer[kAnswerText];
   cell.nameLabel.text = answer[kAnswerName];
-  if ([answer[kAnswerName] isEqualToString:_answer[kAnswerName]]) {
-    cell.frameImage.hidden = NO;
-  } else {
-    cell.frameImage.hidden = YES;
-  }
+//  if ([answer[kAnswerName] isEqualToString:_answer[kAnswerName]]) {
+//    cell.frameImage.hidden = NO;
+//  } else {
+//    cell.frameImage.hidden = YES;
+//  }
   return cell;
 }
 @end
