@@ -1,0 +1,57 @@
+{% extends "template.twig" %}
+
+{% block head %}
+<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+<script src="/js/answer.js"></script>
+{% endblock %}
+
+{% block title %}
+Nani-colle answer debug console
+{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block container %}
+
+<h3>Select Questions</h3>
+
+<ul id="questions">
+	
+</ul>
+
+<h3>Send Answer</h3>
+
+<form role="form" id="form-answer">
+  <div class="form-group">
+    <label for="inputQId">Question ID</label>
+    <input type="text" class="form-control" id="inputQId" placeholder="qid" value="">
+  </div>
+  <div class="form-group">
+    <label for="inputName">Name</label>
+    <input type="text" class="form-control" id="inputName" placeholder="Enter your name" value="Yuri">
+  </div>
+  <div class="form-group">
+    <label for="inputText">Text</label>
+    <input type="text" class="form-control" id="inputText" placeholder="Enter Text" required="required" value="Answer Text">
+  </div>
+
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+
+
+<h3>View Answers</h3>
+
+<ul id="answer">
+
+	
+</ul>
+
+
+<h3>Console</h3>
+<ul id="console">
+	
+</ul>
+
+{% endblock %}

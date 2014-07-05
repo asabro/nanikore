@@ -28,7 +28,6 @@
   
   // init s3
   [self initS3];
-  
   return YES;
 }
 
@@ -142,13 +141,13 @@
 }
 
 - (void)initS3 {
-  
-  if(![ACCESS_KEY_ID isEqualToString:@"CHANGE ME"]
-     && self.s3 == nil)
-  {
-    self.s3 = [[AmazonS3Client alloc] initWithAccessKey:ACCESS_KEY_ID withSecretKey:SECRET_KEY];
-    self.s3.endpoint = [AmazonEndpoints s3Endpoint:US_WEST_2];
-  }
+      [AmazonErrorHandler shouldNotThrowExceptions];
+      
+      self.s3 = [[AmazonS3Client alloc] initWithAccessKey:ACCESS_KEY_ID withSecretKey:SECRET_KEY];
+      self.s3.endpoint = [AmazonEndpoints s3Endpoint:AP_NORTHEAST_1];
+
+    
+
 }
 
 + (AmazonS3Client *)s3 {

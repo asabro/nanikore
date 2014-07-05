@@ -1,0 +1,35 @@
+{% extends "template.twig" %}
+
+{% block head %}
+<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+{% endblock %}
+
+{% block title %}
+SPAJAM 2014 Nani-Colle by 朝風呂ブラザーズ
+{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block container %}
+
+<style>
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+</style>
+
+<div class="row">
+  <div class="col-md-12">
+	  <iframe src="/wireframe/" id="wireframe" ></iframe>    
+
+	  <form action="/upload" method="post" enctype="multipart/form-data">
+		<input type="file" name="image" /><input type="submit" value="submit">
+	  </form>
+  </div>
+</div>
+
+
+{% endblock %}

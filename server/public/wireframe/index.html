@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>CSS3 iPhone 5</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <style>
+            body{
+                font-size:16px;
+            }
+            .grey {
+                background-color: #ccc;
+                -webkit-border-radius: 0.125em;
+                -moz-border-radius: 0.125em;
+                border-radius: 0.125em;
+                position: absolute;
+            }
+            .frame{
+                border: 0.4em solid #ccc;
+            }
+            .border{
+                border: 0.3em solid #ccc;
+            }
+            #iphone {
+                position: relative;
+                /*top:50%;*/
+                left:50%;
+                margin-left:-11.875em;
+            }
+
+            #power {
+                width:4em;
+                height:0.4em;
+                /*margin-bottom: 0px;*/
+                top:-0.33em;
+                margin-left: 16.5em;
+            }
+
+            #lock {
+                width: 0.4em;
+                height: 2.25em;
+                left: -0.33em;
+                margin-top: 6.03em;
+            }
+            .volumn {
+                width: 0.4em;
+                height: 1.8em;
+                left: -0.33em;
+                margin-top:11.05em;
+            }
+            #down{
+                margin-top:15em;
+            }
+            #outter-frame{
+                width: 23.75em;
+                height: 49.75em;
+                background-color: #fff;
+                -webkit-border-radius: 3.4375em;
+                -moz-border-radius: 3.4375em;
+                border-radius: 3.4375em;
+            }
+            #camera{
+                width:0.4em;
+                height:0.4em;
+                -webkit-border-radius: 1em;
+                -moz-border-radius: 1em;
+                border-radius: 1em;
+                position: absolute;
+                top: 2.5em;
+                left: 11.9em;
+            }
+            #detect {
+                width: 3.8125em;
+                height: 0.46875em;
+                -webkit-border-radius: 1em;
+                -moz-border-radius: 1em;
+                border-radius: 1em;
+                position: absolute;
+                top: 3.75em;
+                left: 10.125em;
+            }
+            #inner-frame {
+                width:20em;
+                height:35.5em;
+                -webkit-border-radius: 0.25em;
+                -moz-border-radius: 0.25em;
+                border-radius: 0.25em;
+                position: absolute;
+                top: 6.875em;
+                left: 1.875em;
+                overflow-x:hidden; 
+            }
+            #home {
+                width:4.0625em;
+                height:4.0625em;
+                -webkit-border-radius: 5.03125em;
+                -moz-border-radius: 5.03125em;
+                border-radius: 5.03125em;
+                position: absolute;
+                left: 9.94375em;
+                top: 44.2em;
+            }
+            #home-center {
+                width:1.3125em;
+                height:1.3125em;
+                -webkit-border-radius: 0.3125em;
+                -moz-border-radius: 0.3125em;
+                border-radius: 0.3125em;
+                position: absolute;
+                top: 1.125em;
+                left: 1.125em;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id = "iphone">
+            <div id="power" class="grey"></div>
+            <div id="lock" class="grey"></div>
+            <div id="up" class="grey volumn"></div>
+            <div id="down" class="grey volumn"></div>
+            <div id="outter-frame" class="frame">
+                <div id="camera" class="border"></div>
+                <div id="detect" class="border"></div>
+                <div id="inner-frame" class="frame">
+                 
+                </div>
+                <div id="home" class="border">
+                    <div id="home-center" class="border"></div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
