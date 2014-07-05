@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SeeAnswerCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @end
