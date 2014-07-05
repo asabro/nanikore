@@ -106,7 +106,7 @@ var askers = io.of('/ask').on('connection', function(socket) {
             var answer = {
                 'qid': 'q' + data.qid,
                 'name': 'Ryohei',
-                'text': 'Benjo!',
+                'text': 'Rubber Duck!',
                 'aid': aid++
             };
             askers.to('q' + data.qid).emit('answer', answer);
@@ -148,6 +148,7 @@ var answerers = io.of('/answer').on('connection', function(socket) {
     var listeningTo = null;
 
     socket.on('listenTo', function(qid, fn) {
+        console.log("listenTo", qid);
         socket.emit('answers', answerList[qid]);
         // if (listeningTo) socket.leave('q' + listeningTo);
         socket.join('q' + qid);
