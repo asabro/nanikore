@@ -25,5 +25,6 @@ typedef enum {
 @property (nonatomic, strong) AmazonS3Client *s3;
 
 +(AZSocketIO *) socketIO;
+- (void)initS3;
 @end
 
