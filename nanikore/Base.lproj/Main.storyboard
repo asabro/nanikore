@@ -114,17 +114,16 @@
                                     <action selector="button3Push:" destination="9PH-Eq-KqQ" eventType="touchUpInside" id="Xik-6E-mHL"/>
                                 </connections>
                             </button>
-                            <webView contentMode="scaleAspectFit" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MK6-mZ-BSM">
-                                <rect key="frame" x="92" y="46" width="132" height="132"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="loR-3B-qkO">
+                                <rect key="frame" x="94" y="46" width="132" height="132"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="3y8-v9-kkC"/>
                     <connections>
-                        <outlet property="webView" destination="MK6-mZ-BSM" id="ENu-Sy-FaH"/>
+                        <outlet property="imageView" destination="loR-3B-qkO" id="cnH-n1-EYc"/>
                         <segue destination="e4d-2b-H3A" kind="push" identifier="seeAnswers" id="dLa-8c-0DB"/>
                     </connections>
                 </viewController>
@@ -148,16 +147,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjZ-RA-bFV">
-                                <rect key="frame" x="137" y="90" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ZCl-3e-hrR" kind="push" id="Eoc-XF-etz"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="e84-eT-0gf">
                                 <rect key="frame" x="0.0" y="279" width="320" height="289"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,13 +165,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PWo-6A-hn9">
+                                <rect key="frame" x="76" y="54" width="168" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZkV-Pd-HuS"/>
                     <connections>
+                        <outlet property="imageView" destination="PWo-6A-hn9" id="7tE-6C-Z4X"/>
                         <outlet property="tableView" destination="e84-eT-0gf" id="InX-wX-nCG"/>
-                        <segue destination="ZCl-3e-hrR" kind="push" identifier="evaluation" id="xaW-h3-Ja6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cb8-u2-Lrr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -198,7 +191,7 @@
                         <viewControllerLayoutGuide type="bottom" id="eTe-nI-2th"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vki-hh-GXQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="eval" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTY-3C-JLk">
@@ -550,6 +543,5 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="TEZ-oq-Xz5"/>
-        <segue reference="xaW-h3-Ja6"/>
     </inferredMetricsTieBreakers>
 </document>

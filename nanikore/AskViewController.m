@@ -13,7 +13,7 @@
 #define kSeeAnswerSegue @"seeAnswers"
 
 @interface AskViewController ()
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @end
 
 @implementation AskViewController
@@ -33,8 +33,7 @@
 //  _imgurl = @"https://dl.dropboxusercontent.com/u/6324118/toilet.png";
   
 //  _webView.scalesPageToFit = YES;
-  NSURLRequest *urlRequest =[NSURLRequest requestWithURL:[NSURL URLWithString:_imgurl]];
-  [_webView loadRequest:urlRequest];
+  _imageView.image = _image;
 }
 
 - (void)postQuestion {
@@ -89,6 +88,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
   SeeAnswerViewController * vc = segue.destinationViewController;
+  vc.image = _image;
 }
 
 @end

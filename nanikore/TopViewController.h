@@ -10,6 +10,7 @@
 
 @interface TopViewController : UIViewController
 @property NSString * imgurl;
+@property UIImage * image;
 - (void) pushAskViewController;
 @end
 

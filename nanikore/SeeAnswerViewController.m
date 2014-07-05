@@ -14,6 +14,7 @@
 #import "SeeAnswerCell.h"
 
 @interface SeeAnswerViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @end
 
 @implementation SeeAnswerViewController
@@ -29,29 +30,12 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
+  // Do any additional setup after loading the view.
+  
+  _imageView.image = _image;
   
   _answers = [NSMutableArray array];
-//  NSArray * answers =
-//  @[
-//    @{kAnswerText: @"といれ",
-//      kAnswerQID: @"123",
-//      kAnswerName: @"murakami"},
-//    @{kAnswerText: @"といれだよ",
-//      kAnswerQID: @"123",
-//      kAnswerName: @"murakami"},
-//    @{kAnswerText: @"といれっと",
-//      kAnswerQID: @"123",
-//      kAnswerName: @"murakami"},
-//    @{kAnswerText: @"といれ〜",
-//      kAnswerQID: @"123",
-//      kAnswerName: @"murakami"},
-//    @{kAnswerText: @"といれtれ",
-//      kAnswerQID: @"123",
-//      kAnswerName: @"murakami"},
-//    ];
-//  _answers = [answers mutableCopy];
   // データ受け取りの準備
   AppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
   appDelegate.seeAnswerViewController = self;

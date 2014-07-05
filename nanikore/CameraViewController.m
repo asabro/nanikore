@@ -11,7 +11,7 @@
 #import "Constants.h"
 
 @interface CameraViewController ()
-
+@property UIImage * uiimage;
 @end
 
 @implementation CameraViewController
@@ -86,7 +86,8 @@
 {
     // Get the selected image.
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    
+  _uiimage = image;
+  
     // Convert the image to JPEG data.
     NSData *imageData = UIImageJPEGRepresentation(image, 0.6);
     self.imageData = imageData;
@@ -188,6 +189,7 @@
   
   [self dismissViewControllerAnimated:YES completion:nil];
   _prevViewController.imgurl = returnURL;
+  _prevViewController.image = _uiimage;
   [_prevViewController pushAskViewController];
 }
 

@@ -12,4 +12,5 @@
 @property NSString * imgurl;
 @property NSString * text;
 @property NSDictionary * question;
+@property UIImage * image;
 @end

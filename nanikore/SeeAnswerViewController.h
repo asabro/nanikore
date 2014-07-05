@@ -10,5 +10,6 @@
 
 @interface SeeAnswerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSMutableArray * answers;
+@property (nonatomic, strong) UIImage * image;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end

@@ -41,6 +41,7 @@
   } else if ([segue.identifier isEqualToString:kAskSegue]) {
     AskViewController * vc = segue.destinationViewController;
     vc.imgurl = self.imgurl;
+    vc.image = self.image;
   }
 }
 
