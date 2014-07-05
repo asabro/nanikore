@@ -57,6 +57,7 @@
 {
   AnswerViewController * vc = [segue destinationViewController];
   vc.question = self.question;
+  vc.image = self.image;
 }
 
 @end

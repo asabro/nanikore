@@ -10,4 +10,5 @@
 
 @interface AnswerViewController : UIViewController
 @property (nonatomic, strong) NSDictionary * question;
+@property UIImage * image;
 @end

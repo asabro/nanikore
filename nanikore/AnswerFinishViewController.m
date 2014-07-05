@@ -7,10 +7,13 @@
 //
 
 #import "AnswerFinishViewController.h"
+#import "AnswerKeys.h"
 #import "AppDelegate.h"
 
 @interface AnswerFinishViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
+@property (weak, nonatomic) IBOutlet UILabel *label1;
+@property (weak, nonatomic) IBOutlet UILabel *label2;
 @end
 
 @implementation AnswerFinishViewController
@@ -28,6 +31,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+  _label1.text = _answer1[kAnswerText];
+  _label2.text = _answer2[kAnswerText];
 }
 
 - (void)didReceiveMemoryWarning

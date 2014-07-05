@@ -9,12 +9,12 @@
 #import "QuestionListViewController.h"
 #import "CountDownViewController.h"
 #import "AppDelegate.h"
+#import "QuestionKeys.h"
 
 #define kAnswerSegue @"answer"
 
 @interface QuestionListViewController ()
 @property (weak, nonatomic) NSMutableArray * questions;
-
 @end
 
 @implementation QuestionListViewController
@@ -31,7 +31,13 @@
 {
   [super viewDidLoad];
   // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
   _questions = [AppDelegate questions];
+//  [self performSegueWithIdentifier:@"countDown" sender:self];
+  [self performSelector:@selector(pushCountdownView) withObject:nil afterDelay:1.0];
 }
 
 - (IBAction)buttonPush:(id)sender{
@@ -40,9 +46,22 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   // データの受け渡し
-  NSUInteger index = 0;
   CountDownViewController * vc = [segue destinationViewController];
-  vc.question = _questions[index];
+  
+  NSUInteger index = 0;
+  NSDictionary * question;
+  question = _questions[index];
+  vc.question = question;
+  NSString *URLString = question[kQuestionImgURL];
+//  NSString *URLString = @"http://49.212.129.143:5000/uploads/1404578052437.jpg";
+	NSURL *url = [NSURL URLWithString:URLString];
+	NSData *data = [NSData dataWithContentsOfURL:url];
+	UIImage *image = [[UIImage alloc] initWithData:data];
+  vc.image = image;
+}
+
+- (void)pushCountdownView {
+  [self performSegueWithIdentifier:@"countDown" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
