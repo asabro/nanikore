@@ -1,7 +1,7 @@
 var timelimit = 15;
 
 $(function() {
-    var socket = io.connect('/answer');
+    var socket = location.host == "nani-colle.com" ? io.connect('49.212.129.143:5000/answer') : io.connect('/answer');
     socket.emit('debug', 'connected (answer)');
     var name = "Ryohei";
 

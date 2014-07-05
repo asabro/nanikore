@@ -1,5 +1,5 @@
 $(function() {
-    var socket = io.connect('/ask');
+    var socket = location.host == "nani-colle.com" ? io.connect('49.212.129.143:5000/ask') : io.connect('/ask');
     socket.emit('debug', 'connected');
 
     $("#form-ask").submit(function() {
