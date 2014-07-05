@@ -117,8 +117,12 @@
   _selectCounter++;
   if ((_selectCounter >= 2) || (_selectCounter >= _answers.count)) {
       AZSocketIO* socketIO = [AppDelegate askSocketIO];
-      [socketIO emit:@"eval" args:@{@"qid": @0, @"eval": @[self.goldAid, self.silverAid]} error:nil ack:^{
-      }];
+      if(_selectCounter == 2){
+            [socketIO emit:@"eval" args:@{@"qid": @0, @"eval": @[self.goldAid, self.silverAid]} error:nil ack:^{}];
+      }else if(_selectCounter == 1){
+          [socketIO emit:@"eval" args:@{@"qid": @0, @"eval": @[self.goldAid]} error:nil ack:^{}];
+          
+      }
     [self showArigatoButton];
   }
 }
