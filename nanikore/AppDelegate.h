@@ -27,14 +27,16 @@ typedef enum {
 + (NSMutableArray *)questions;
 
 // web api
-@property (strong, nonatomic) AZSocketIO * socketIO;
+@property (strong, nonatomic) AZSocketIO * askSocketIO;
+@property (strong, nonatomic) AZSocketIO * answerSocketIO;
 @property (nonatomic) UploadType uploadType;
 @property (nonatomic, retain) AmazonS3Client *s3;
 
-+(AZSocketIO *) socketIO;
++(AZSocketIO *) askSocketIO;
++(AZSocketIO *) answerSocketIO;
 +(AmazonS3Client *) s3;
 
-- (void)initSocketIOAsAskMode;
-- (void)initSocketIOAsAnswerMode;
+- (void)initAskSocketIO;
+- (void)initAnswerSocketIO;
 @end
 

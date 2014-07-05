@@ -24,7 +24,7 @@
   // Do any additional setup after loading the view, typically from a nib.
   [self.navigationController setNavigationBarHidden:YES animated:NO];
   AppDelegate * appDelegate;
-  [appDelegate initSocketIOAsAskMode];
+  [appDelegate initAskSocketIO];
 }
 
 - (void)didReceiveMemoryWarning {

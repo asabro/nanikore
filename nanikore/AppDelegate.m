@@ -20,12 +20,13 @@
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // init socket IO
-//  [self initSocketIOAsAskMode];
+  [self initAskSocketIO];
+  [self initAnswerSocketIO];
   _username = @"hogetarou";
   
   _questions = [NSMutableArray array];
   
-  [self initSocketIOAsAnswerMode];
+  [self initAnswerSocketIO];
   
   // init s3
   [self initS3];
@@ -69,31 +70,31 @@
 
 // ============
 
-- (void)initSocketIOAsAskMode {
+- (void)initAskSocketIO {
   // init socketIO
-  _socketIO = [[AZSocketIO alloc] initWithHost:TEST_SERVER_IP andPort:TEST_SERVER_PORT secure:NO withNamespace:@"/ask"];
+  _askSocketIO = [[AZSocketIO alloc] initWithHost:TEST_SERVER_IP andPort:TEST_SERVER_PORT secure:NO withNamespace:@"/ask"];
   
   // メッセージを受信した時に実行されるBlocks
-  [self.socketIO setMessageRecievedBlock:^(id data) {
+  [self.askSocketIO setMessageRecievedBlock:^(id data) {
     NSLog(@"data: %@", data);
   }];
   
   // イベントを受信したときに実行されるBlocks
-  [self.socketIO setEventRecievedBlock:^(NSString *eventName, id data) {
+  [self.askSocketIO setEventRecievedBlock:^(NSString *eventName, id data) {
     NSLog(@"eventName: %@, data: %@", eventName, data);
   }];
   
   // エラーを受信したときに実行されるBlocks
-  [self.socketIO setErrorBlock:^(NSError *error) {
+  [self.askSocketIO setErrorBlock:^(NSError *error) {
     NSLog(@"error: %@", error);
   }];
   
   // 切断されたときに実行されるBlocks
-  [self.socketIO setDisconnectedBlock:^{
+  [self.askSocketIO setDisconnectedBlock:^{
     NSLog(@"Disconnected!");
   }];
   
-  [self.socketIO connectWithSuccess:^{
+  [self.askSocketIO connectWithSuccess:^{
     NSLog(@"Success connecting!");
   } andFailure:^(NSError *error) {
     NSLog(@"Failure connecting. error: %@", error);
@@ -102,19 +103,19 @@
 
 #define kEventNameQuestion @"question"
 
-- (void)initSocketIOAsAnswerMode {
+- (void)initAnswerSocketIO {
   // init socketIO
-  _socketIO = [[AZSocketIO alloc] initWithHost:TEST_SERVER_IP andPort:TEST_SERVER_PORT secure:NO withNamespace:@"/answer"];
+  _answerSocketIO = [[AZSocketIO alloc] initWithHost:TEST_SERVER_IP andPort:TEST_SERVER_PORT secure:NO withNamespace:@"/answer"];
   
   __block AppDelegate * __self__ = self;
   
   // メッセージを受信した時に実行されるBlocks
-  [self.socketIO setMessageRecievedBlock:^(id data) {
+  [self.answerSocketIO setMessageRecievedBlock:^(id data) {
     NSLog(@"data: %@", data);
   }];
   
   // イベントを受信したときに実行されるBlocks
-  [self.socketIO setEventRecievedBlock:^(NSString *eventName, id data) {
+  [self.answerSocketIO setEventRecievedBlock:^(NSString *eventName, id data) {
     NSLog(@"eventName: %@, data: %@", eventName, data);
     if ([eventName isEqualToString:kEventNameQuestion]){
 //      [__self__.questions arrayByAddingObjectsFromArray:data[0]];
@@ -125,25 +126,30 @@
   }];
   
   // エラーを受信したときに実行されるBlocks
-  [self.socketIO setErrorBlock:^(NSError *error) {
+  [self.answerSocketIO setErrorBlock:^(NSError *error) {
     NSLog(@"error: %@", error);
   }];
   
   // 切断されたときに実行されるBlocks
-  [self.socketIO setDisconnectedBlock:^{
+  [self.answerSocketIO setDisconnectedBlock:^{
     NSLog(@"Disconnected!");
   }];
   
-  [self.socketIO connectWithSuccess:^{
+  [self.answerSocketIO connectWithSuccess:^{
     NSLog(@"Success connecting!");
   } andFailure:^(NSError *error) {
     NSLog(@"Failure connecting. error: %@", error);
   }];
 }
 
-+ (AZSocketIO *)socketIO {
++ (AZSocketIO *)askSocketIO {
   AppDelegate * delegate = [UIApplication sharedApplication].delegate;
-  return delegate.socketIO;
+  return delegate.askSocketIO;
+}
+
++ (AZSocketIO *)answerSocketIO {
+  AppDelegate * delegate = [UIApplication sharedApplication].delegate;
+  return delegate.answerSocketIO;
 }
 
 - (void)initS3 {

@@ -58,9 +58,9 @@
   // send answer
   NSLog(@"%@", answer);
   
-  AZSocketIO * socketIO = [AppDelegate socketIO];
-  
-  
+  AZSocketIO * socketIO = [AppDelegate answerSocketIO];
+  [socketIO emit:@"answer" args:answer error:nil ack:^{
+  }];
   
   OtherAnswerListViewController * vc = [segue destinationViewController];
   vc.answer = answer;

@@ -32,7 +32,7 @@
 }
 
 - (void)postAsk {
-  AZSocketIO * socketIO = [AppDelegate socketIO];
+  AZSocketIO * socketIO = [AppDelegate askSocketIO];
   
   NSError * error;
   NSDictionary * ask = @{@"name": @"ryohei",
