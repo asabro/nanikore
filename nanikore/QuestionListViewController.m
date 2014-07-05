@@ -9,12 +9,12 @@
 #import "QuestionListViewController.h"
 #import "CountDownViewController.h"
 #import "AppDelegate.h"
+#import "QuestionKeys.h"
 
 #define kAnswerSegue @"answer"
 
 @interface QuestionListViewController ()
 @property (weak, nonatomic) NSMutableArray * questions;
-
 @end
 
 @implementation QuestionListViewController
@@ -40,9 +40,18 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   // データの受け渡し
-  NSUInteger index = 0;
   CountDownViewController * vc = [segue destinationViewController];
-  vc.question = _questions[index];
+  
+  NSUInteger index = 0;
+  NSDictionary * question;
+  question = _questions[index];
+  vc.question = question;
+  NSString *URLString = question[kQuestionImgURL];
+	NSURL *url = [NSURL URLWithString:URLString];
+	NSData *data = [NSData dataWithContentsOfURL:url];
+	UIImage *image = [[UIImage alloc] initWithData:data];
+  vc.image = image;
+  
 }
 
 - (void)didReceiveMemoryWarning

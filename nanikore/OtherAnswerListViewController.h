@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface OtherAnswerListViewController : UIViewController
+@property UIImage * image;
 @property NSDictionary * answer;
 @end

@@ -9,7 +9,6 @@
 #import "OtherAnswerListViewController.h"
 
 @interface OtherAnswerListViewController ()
-
 @end
 
 @implementation OtherAnswerListViewController
