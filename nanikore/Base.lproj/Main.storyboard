@@ -165,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="2108" y="575"/>
         </scene>
-        <!--View Controller-->
+        <!--Answer Top View Controller-->
         <scene sceneID="tpP-Eb-5Qs">
             <objects>
-                <viewController id="pbz-rM-KbK" sceneMemberID="viewController">
+                <viewController id="pbz-rM-KbK" customClass="AnswerTopViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3CC-6p-6ww"/>
                         <viewControllerLayoutGuide type="bottom" id="tJ7-bo-j4s"/>
@@ -261,17 +261,13 @@
         <!--Navigation Controller-->
         <scene sceneID="T8Q-iG-hVS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="GdK-5z-YU7" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GdK-5z-YU7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TMd-7z-t19">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="eKZ-Uo-4Go">
-                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
                         <segue destination="pbz-rM-KbK" kind="relationship" relationship="rootViewController" id="yOc-pt-74j"/>
                     </connections>
