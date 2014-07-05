@@ -12,6 +12,7 @@
 		6CD62D0B1967E37A00E904DD /* AskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D0A1967E37A00E904DD /* AskViewController.m */; };
 		6CD62D0E1967E38600E904DD /* SeeAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D0D1967E38600E904DD /* SeeAnswerViewController.m */; };
 		6CD62D111967E38F00E904DD /* EvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D101967E38F00E904DD /* EvaluateViewController.m */; };
+		6CD62D141967E6DF00E904DD /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D131967E6DF00E904DD /* Constants.m */; };
 		F9B798B11967B7A000D97DDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B01967B7A000D97DDE /* main.m */; };
 		F9B798B41967B7A000D97DDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B31967B7A000D97DDE /* AppDelegate.m */; };
 		F9B798B71967B7A000D97DDE /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B61967B7A000D97DDE /* TopViewController.m */; };
@@ -39,6 +40,8 @@
 		6CD62D0D1967E38600E904DD /* SeeAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeAnswerViewController.m; sourceTree = "<group>"; };
 		6CD62D0F1967E38F00E904DD /* EvaluateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateViewController.h; sourceTree = "<group>"; };
 		6CD62D101967E38F00E904DD /* EvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateViewController.m; sourceTree = "<group>"; };
+		6CD62D121967E6DF00E904DD /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		6CD62D131967E6DF00E904DD /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		B08DDD4CEC294F42BCBB34BB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C5FE27FD02B44B44B3BED450 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B798AB1967B7A000D97DDE /* nanikore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nanikore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +82,8 @@
 			children = (
 				6C3B703B1967CE4000B67EE7 /* CameraViewController.h */,
 				6C3B703C1967CE4000B67EE7 /* CameraViewController.m */,
+				6CD62D121967E6DF00E904DD /* Constants.h */,
+				6CD62D131967E6DF00E904DD /* Constants.m */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -319,6 +324,7 @@
 				F9B798B71967B7A000D97DDE /* TopViewController.m in Sources */,
 				6C3B703D1967CE4000B67EE7 /* CameraViewController.m in Sources */,
 				F9B798B41967B7A000D97DDE /* AppDelegate.m in Sources */,
+				6CD62D141967E6DF00E904DD /* Constants.m in Sources */,
 				6CD62D111967E38F00E904DD /* EvaluateViewController.m in Sources */,
 				F9B798B11967B7A000D97DDE /* main.m in Sources */,
 				6CD62D0E1967E38600E904DD /* SeeAnswerViewController.m in Sources */,
