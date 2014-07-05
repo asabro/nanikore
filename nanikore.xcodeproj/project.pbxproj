@@ -59,6 +59,7 @@
 		6CD62DC01968937C00E904DD /* OtherAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62DBF1968937C00E904DD /* OtherAnswerCell.xib */; };
 		6CD62DC31968954900E904DD /* A_judgement_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62DC11968954900E904DD /* A_judgement_cell.png */; };
 		6CD62DC41968954900E904DD /* A_ready.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62DC21968954900E904DD /* A_ready.png */; };
+		6CD62DC81968A90E00E904DD /* A_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62DC71968A90E00E904DD /* A_top.png */; };
 		F9B798B11967B7A000D97DDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B01967B7A000D97DDE /* main.m */; };
 		F9B798B41967B7A000D97DDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B31967B7A000D97DDE /* AppDelegate.m */; };
 		F9B798B71967B7A000D97DDE /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B61967B7A000D97DDE /* TopViewController.m */; };
@@ -149,6 +150,7 @@
 		6CD62DBF1968937C00E904DD /* OtherAnswerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherAnswerCell.xib; sourceTree = "<group>"; };
 		6CD62DC11968954900E904DD /* A_judgement_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = A_judgement_cell.png; sourceTree = "<group>"; };
 		6CD62DC21968954900E904DD /* A_ready.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = A_ready.png; sourceTree = "<group>"; };
+		6CD62DC71968A90E00E904DD /* A_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = A_top.png; sourceTree = "<group>"; };
 		B08DDD4CEC294F42BCBB34BB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C5FE27FD02B44B44B3BED450 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B798AB1967B7A000D97DDE /* nanikore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nanikore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -280,6 +282,7 @@
 		6CD62D8A19687DE500E904DD /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				6CD62DC71968A90E00E904DD /* A_top.png */,
 				6CD62DC11968954900E904DD /* A_judgement_cell.png */,
 				6CD62DC21968954900E904DD /* A_ready.png */,
 				6CD62DB51968889D00E904DD /* A_judgement(frame).png */,
@@ -496,6 +499,7 @@
 				6CD62DB81968889D00E904DD /* A_judgement(frame).png in Resources */,
 				6CD62DA719687DE500E904DD /* Q_collectA(gray) のコピー.png in Resources */,
 				6CD62DA219687DE500E904DD /* A_judgement.png in Resources */,
+				6CD62DC81968A90E00E904DD /* A_top.png in Resources */,
 				6CD62DAC19687DE500E904DD /* Q_gold.png in Resources */,
 				6CD62DA419687DE500E904DD /* A_keyboard.png in Resources */,
 				6CD62D461968599100E904DD /* Q_question.png in Resources */,
