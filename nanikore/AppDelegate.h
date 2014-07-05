@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AZSocketIO.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
