@@ -67,16 +67,9 @@ io.on('connection', function(socket) {
 })
 
 var qid = 1;
-var questionList = [{
-    qid: 100,
-    name: "default",
-    text: "What's this?",
-    url: "http://49.212.129.143:5000/uploads/1404597120041.jpg"
-}];
+var questionList = [];
 
-var answerList = {
-    100: [],
-};
+var answerList = {};
 
 var askers = io.of('/ask').on('connection', function(socket) {
     var user = {
