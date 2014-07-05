@@ -7,9 +7,11 @@
 //
 
 #import "OtherAnswerListViewController.h"
+#import "OtherAnswerCell.h"
+#import "AppDelegate.h"
+#import "AnswerKeys.h"
 
 @interface OtherAnswerListViewController ()
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @end
@@ -27,10 +29,19 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
     // Do any additional setup after loading the view.
   _imageView.image = self.image;
   _label.text = self.text;
+  _tableView.dataSource = self;
+  _tableView.delegate = self;
+  
+  UINib *nib = [UINib nibWithNibName:NSStringFromClass([OtherAnswerCell class])
+                              bundle:nil];
+  [self.tableView registerNib:nib forCellReuseIdentifier:@"Cell"];
+  
+  AppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
+  appDelegate.otherAnswerViewController = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,4 +61,19 @@
 }
 */
 
+#pragma mark - data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  return [AppDelegate answers].count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSString *cellIdentifier = @"Cell";
+  OtherAnswerCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+
+  NSDictionary * answer = [AppDelegate answers][indexPath.row];
+  cell.mainLabel.text = answer[kAnswerText];
+  cell.nameLabel.text = answer[kAnswerName];
+  return cell;
+}
 @end

@@ -55,6 +55,10 @@
 		6CD62DB81968889D00E904DD /* A_judgement(frame).png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62DB51968889D00E904DD /* A_judgement(frame).png */; };
 		6CD62DB91968889D00E904DD /* A_judgement(background).png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62DB61968889D00E904DD /* A_judgement(background).png */; };
 		6CD62DBA1968889D00E904DD /* A_arigatou_bak.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62DB71968889D00E904DD /* A_arigatou_bak.png */; };
+		6CD62DBE1968936900E904DD /* OtherAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62DBD1968936900E904DD /* OtherAnswerCell.m */; };
+		6CD62DC01968937C00E904DD /* OtherAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62DBF1968937C00E904DD /* OtherAnswerCell.xib */; };
+		6CD62DC31968954900E904DD /* A_judgement_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62DC11968954900E904DD /* A_judgement_cell.png */; };
+		6CD62DC41968954900E904DD /* A_ready.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62DC21968954900E904DD /* A_ready.png */; };
 		F9B798B11967B7A000D97DDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B01967B7A000D97DDE /* main.m */; };
 		F9B798B41967B7A000D97DDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B31967B7A000D97DDE /* AppDelegate.m */; };
 		F9B798B71967B7A000D97DDE /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B61967B7A000D97DDE /* TopViewController.m */; };
@@ -140,6 +144,11 @@
 		6CD62DB51968889D00E904DD /* A_judgement(frame).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "A_judgement(frame).png"; sourceTree = "<group>"; };
 		6CD62DB61968889D00E904DD /* A_judgement(background).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "A_judgement(background).png"; sourceTree = "<group>"; };
 		6CD62DB71968889D00E904DD /* A_arigatou_bak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = A_arigatou_bak.png; sourceTree = "<group>"; };
+		6CD62DBC1968936900E904DD /* OtherAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherAnswerCell.h; sourceTree = "<group>"; };
+		6CD62DBD1968936900E904DD /* OtherAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherAnswerCell.m; sourceTree = "<group>"; };
+		6CD62DBF1968937C00E904DD /* OtherAnswerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtherAnswerCell.xib; sourceTree = "<group>"; };
+		6CD62DC11968954900E904DD /* A_judgement_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = A_judgement_cell.png; sourceTree = "<group>"; };
+		6CD62DC21968954900E904DD /* A_ready.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = A_ready.png; sourceTree = "<group>"; };
 		B08DDD4CEC294F42BCBB34BB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C5FE27FD02B44B44B3BED450 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B798AB1967B7A000D97DDE /* nanikore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nanikore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +243,7 @@
 		6CD62D2919680FFA00E904DD /* AnswerMode */ = {
 			isa = PBXGroup;
 			children = (
+				6CD62DBB196891CB00E904DD /* OtherAnswerCell */,
 				6CD62D2A1968102100E904DD /* AnswerTopViewController.h */,
 				6CD62D2B1968102100E904DD /* AnswerTopViewController.m */,
 				6CD62D2D1968114E00E904DD /* QuestionListViewController.h */,
@@ -270,6 +280,8 @@
 		6CD62D8A19687DE500E904DD /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				6CD62DC11968954900E904DD /* A_judgement_cell.png */,
+				6CD62DC21968954900E904DD /* A_ready.png */,
 				6CD62DB51968889D00E904DD /* A_judgement(frame).png */,
 				6CD62DB61968889D00E904DD /* A_judgement(background).png */,
 				6CD62DB71968889D00E904DD /* A_arigatou_bak.png */,
@@ -297,6 +309,16 @@
 			);
 			path = assets;
 			sourceTree = SOURCE_ROOT;
+		};
+		6CD62DBB196891CB00E904DD /* OtherAnswerCell */ = {
+			isa = PBXGroup;
+			children = (
+				6CD62DBC1968936900E904DD /* OtherAnswerCell.h */,
+				6CD62DBD1968936900E904DD /* OtherAnswerCell.m */,
+				6CD62DBF1968937C00E904DD /* OtherAnswerCell.xib */,
+			);
+			name = OtherAnswerCell;
+			sourceTree = "<group>";
 		};
 		D2D1E9B3BF5444D2B43E4545 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -466,6 +488,7 @@
 				6CD62D581968728800E904DD /* Q_gold.png in Resources */,
 				6CD62DAA19687DE500E904DD /* Q_collectA_cell.png in Resources */,
 				F9B798BA1967B7A000D97DDE /* Main.storyboard in Resources */,
+				6CD62DC31968954900E904DD /* A_judgement_cell.png in Resources */,
 				6CD62DA019687DE500E904DD /* A_arigatou.png in Resources */,
 				6CD62DAF19687DE500E904DD /* Q_selectA.png in Resources */,
 				6CD62DA919687DE500E904DD /* Q_collectA.png in Resources */,
@@ -476,6 +499,7 @@
 				6CD62DAC19687DE500E904DD /* Q_gold.png in Resources */,
 				6CD62DA419687DE500E904DD /* A_keyboard.png in Resources */,
 				6CD62D461968599100E904DD /* Q_question.png in Resources */,
+				6CD62DC41968954900E904DD /* A_ready.png in Resources */,
 				6CD62DB419687DE500E904DD /* toilet.png in Resources */,
 				6CD62DB91968889D00E904DD /* A_judgement(background).png in Resources */,
 				6CD62D4A1968640200E904DD /* Q_collectA(gray).png in Resources */,
@@ -492,6 +516,7 @@
 				6CD62DAE19687DE500E904DD /* Q_question.png in Resources */,
 				6CD62DBA1968889D00E904DD /* A_arigatou_bak.png in Resources */,
 				6CD62DB319687DE500E904DD /* rogo.pdf in Resources */,
+				6CD62DC01968937C00E904DD /* OtherAnswerCell.xib in Resources */,
 				6CD62DAD19687DE500E904DD /* Q_gold.psd in Resources */,
 				6CD62D5A196875C700E904DD /* Q_arigato_button.png in Resources */,
 				6CD62DB219687DE500E904DD /* Q_top.png in Resources */,
@@ -556,6 +581,7 @@
 				6CD62D141967E6DF00E904DD /* Constants.m in Sources */,
 				6CD62D111967E38F00E904DD /* EvaluateViewController.m in Sources */,
 				F9B798B11967B7A000D97DDE /* main.m in Sources */,
+				6CD62DBE1968936900E904DD /* OtherAnswerCell.m in Sources */,
 				6CD62D2F1968114F00E904DD /* QuestionListViewController.m in Sources */,
 				6CD62D35196811B900E904DD /* OtherAnswerListViewController.m in Sources */,
 				6CD62D38196811CF00E904DD /* AnswerFinishViewController.m in Sources */,

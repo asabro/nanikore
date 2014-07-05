@@ -11,6 +11,7 @@
 #import <AWSS3/AWSS3.h>
 #import "QuestionListViewController.h"
 #import "SeeAnswerViewController.h"
+#import "OtherAnswerListViewController.h"
 
 typedef enum {
     GrandCentralDispatch,
@@ -23,6 +24,7 @@ typedef enum {
 @property (strong, nonatomic) UIWindow *window;
 // viewControllers
 @property (weak, nonatomic) SeeAnswerViewController * seeAnswerViewController;
+@property (weak, nonatomic) OtherAnswerListViewController * otherAnswerViewController;
 
 // data
 @property (strong, nonatomic) NSString * username;
