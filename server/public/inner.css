@@ -1,7 +1,16 @@
+
+@font-face {
+font-family: Chunkfive;
+src: url("/fonts/Chunkfive.otf") format("opentype");
+}
+
+
 body {
-    font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Chunkfive", "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: black;
 }
+
+
 
 #quesitonImage{
 	width: 160px;

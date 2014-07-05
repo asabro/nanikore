@@ -71,12 +71,12 @@ var questionList = [{
     qid: 100,
     name: "default",
     text: "What's this?",
-    url: "/assets/manekineko.jpg"
+    url: "http://49.212.129.143:5000/assets/manekineko.jpg"
 }, {
     qid: 101,
     name: "default",
     text: "How to use it?",
-    url: "/assets/washletbig.jpg"
+    url: "http://49.212.129.143:5000/assets/washletbig.jpg"
 }];
 
 var answerList = {
