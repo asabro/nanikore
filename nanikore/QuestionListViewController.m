@@ -7,8 +7,8 @@
 //
 
 #import "QuestionListViewController.h"
+#import "CountDownViewController.h"
 #import "AppDelegate.h"
-#import "AnswerViewController.h"
 
 #define kAnswerSegue @"answer"
 
@@ -35,13 +35,13 @@
 }
 
 - (IBAction)buttonPush:(id)sender{
-  [self performSegueWithIdentifier:kAnswerSegue sender:self];
+  [self performSegueWithIdentifier:@"countDown" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   // データの受け渡し
   NSUInteger index = 0;
-  AnswerViewController * vc = [segue destinationViewController];
+  CountDownViewController * vc = [segue destinationViewController];
   vc.question = _questions[index];
 }
 
