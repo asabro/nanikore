@@ -77,12 +77,12 @@ var questionList = [{
     name: "default",
     text: "How to use it?",
     url: "/assets/washletbig.jpg"
-}, {
-    qid: 101,
-    name: "default",
-    text: "How to use it?",
-    url: "/assets/washletbig.jpg"
 }];
+
+var answerList = {
+    100: [],
+    101: []
+};
 
 var askers = io.of('/ask').on('connection', function(socket) {
     var user = {
@@ -96,8 +96,11 @@ var askers = io.of('/ask').on('connection', function(socket) {
     })
 
     console.log('connected to ask');
+
     socket.on('ask', function(data, fn) {
         data.qid = qid;
+
+        answerList[data.qid] = [];
         questionList.push(data);
         io.of('/answer').emit('question', [data]);
 
@@ -108,18 +111,27 @@ var askers = io.of('/ask').on('connection', function(socket) {
         console.log('joining', 'q' + qid);
 
         // ここからダミー
-        var aid = 1;
         var sendDummyAnswer = function() {
             console.log('sent dummy answer to qid:', 'q' + data.qid);
             var answer = {
                 'qid': 'q' + data.qid,
                 'name': 'Ryohei',
                 'text': 'Benjo!',
-                'aid': aid++
+                'aid': answerList[data.qid].length
             };
+            answerList[data.qid][answer.aid] = answer;
             askers.to('q' + data.qid).emit('answer', answer);
             answerers.to('q' + data.qid).emit('answer', answer);
         };
+
+        socket.on("eval", function(data_eval) {
+            console.log("eval received", data_eval);
+            var eval_result = Array.prototype.map.call(data_eval.eval, function(aid) {
+                return answerList[data.qid][aid]
+            });
+
+            answerers.to('q' + data.qid).emit('eval', eval_result);
+        })
 
         var interval = setInterval(sendDummyAnswer, 5000);
         sendDummyAnswer();
@@ -147,20 +159,25 @@ var answerers = io.of('/answer').on('connection', function(socket) {
         clearInterval(interval);
     })
 
-
     socket.on('answer', function(data, fn) {
-        console.log('answer', data);
+        if (listeningTo) socket.leave('q' + listeningTo);
         socket.join('q' + data.qid);
+        listeningTo = qid;
+
+        data.aid = answerList[data.qid].length;
+
+        console.log('answer', data);
         askers.to('q' + data.qid).emit('answer', data);
         answerers.to('q' + data.qid).emit('answer', data);
-    })
+        answerList[data.qid][data.aid] = data;
+    });
 
     var listeningTo = null;
 
     socket.on('listenTo', function(qid, fn) {
-        // if (listeningTo) socket.leave('q' + listeningTo);
+        if (listeningTo) socket.leave('q' + listeningTo);
         socket.join('q' + qid);
         console.log("joining room q", qid)
-        // listeningTo = qid;
+        listeningTo = qid;
     })
 })

@@ -17,9 +17,17 @@ $(function() {
     });
 
     socket.on('answer', function(data) {
-        console.log("answer received");
-        $("#answer").append("<li>" + data.name + ": " + data.text + "</li>");
-    })
+        console.log("answer received", data.reei);
+        $("#answer").append("<li>" + data.name + ": " + data.text + "(aid: " + data.aid + ")</li>");
+    });
+
+    socket.on('eval', function(data) {
+        console.log("eval received", data);
+        for (var i = 0; i < data.length; i++) {
+            var eval = data[i];
+            $("#eval").append("<li>" + eval.name + ": " + eval.text + "(aid: " + eval.aid + ")</li>");
+        }
+    });
 
     socket.on('question', function(data, fn) {
         console.log('question list received', data);
