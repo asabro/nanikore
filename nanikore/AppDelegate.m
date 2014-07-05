@@ -58,4 +58,9 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
++ (AZSocketIO *)socketIO {
+  AppDelegate * delegate = [UIApplication sharedApplication].delegate;
+  return delegate.socketIO;
+}
+
 @end
