@@ -10,6 +10,7 @@
 
 @interface SeeAnswerCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *image;
-@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UILabel *mainLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 + (CGFloat)rowHeight;
 @end

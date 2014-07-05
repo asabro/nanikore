@@ -24,12 +24,19 @@
                         <rect key="frame" x="212" y="13" width="95" height="91"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqA-cM-VTk">
+                        <rect key="frame" x="63" y="76" width="113" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>
             <connections>
                 <outlet property="image" destination="uDt-sO-CyL" id="Svt-PY-QpQ"/>
-                <outlet property="label" destination="F7J-aA-lkE" id="C1t-n9-OuZ"/>
+                <outlet property="mainLabel" destination="F7J-aA-lkE" id="f7L-o1-8BJ"/>
+                <outlet property="nameLabel" destination="uqA-cM-VTk" id="2B6-6O-pxu"/>
             </connections>
         </tableViewCell>
     </objects>

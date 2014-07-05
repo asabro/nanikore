@@ -86,7 +86,8 @@
   SeeAnswerCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
   
   NSDictionary * answer = _answers[indexPath.row];
-  cell.label.text = answer[kAnswerText];
+  cell.mainLabel.text = answer[kAnswerText];
+  cell.nameLabel.text = answer[kAnswerName];
   return cell;
 }
 
