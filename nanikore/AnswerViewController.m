@@ -35,7 +35,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
   _textLabel.text = _question[kQuestionText];
-  [_textField becomeFirstResponder];
+
+    // listenTo を送る
+    AZSocketIO * socketIO = [AppDelegate answerSocketIO];
+    [socketIO emit:@"listenTo" args:_question[kQuestionID] error:nil ack:^{
+    }];
+
+    [_textField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
