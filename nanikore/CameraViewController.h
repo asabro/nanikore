@@ -14,6 +14,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CameraViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface CameraViewController : UIImagePickerController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @end

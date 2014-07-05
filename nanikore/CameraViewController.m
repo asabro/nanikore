@@ -44,19 +44,16 @@
   }
   
   // UIImagePickerControllerのインスタンスを生成
-  UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+//  UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
   
   // デリゲートを設定
-  imagePickerController.delegate = self;
+  self.delegate = self;
   
   // 画像の取得先をカメラに設定
-  imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+  self.sourceType = UIImagePickerControllerSourceTypeCamera;
   
   // 画像取得後に編集するかどうか（デフォルトはNO）
-  imagePickerController.allowsEditing = YES;
-  
-  // 撮影画面をモーダルビューとして表示する
-  [self presentViewController:imagePickerController animated:YES completion:nil];
+  self.allowsEditing = YES;
 }
 
 // 画像が選択された時に呼ばれるデリゲートメソッド
