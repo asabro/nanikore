@@ -33,6 +33,7 @@
   // Do any additional setup after loading the view.
   _questions = [AppDelegate questions];
 //  [self performSegueWithIdentifier:@"countDown" sender:self];
+  [self performSelector:@selector(pushCountdownView) withObject:nil afterDelay:1.0];
 }
 
 - (IBAction)buttonPush:(id)sender{
@@ -53,6 +54,10 @@
 	NSData *data = [NSData dataWithContentsOfURL:url];
 	UIImage *image = [[UIImage alloc] initWithData:data];
   vc.image = image;
+}
+
+- (void)pushCountdownView {
+  [self performSegueWithIdentifier:@"countDown" sender:self];
 }
 
 - (void)didReceiveMemoryWarning

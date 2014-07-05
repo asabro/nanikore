@@ -14,7 +14,7 @@
   UIViewController *destinationViewController = (UIViewController *)self.destinationViewController;
   
   [UIView transitionWithView:sourceViewController.navigationController.view
-                    duration:1
+                    duration:0
                      options:UIViewAnimationOptionTransitionNone
                   animations:^{
                     [sourceViewController.navigationController pushViewController:destinationViewController animated:NO];
