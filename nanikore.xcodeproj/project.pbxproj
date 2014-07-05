@@ -13,6 +13,8 @@
 		6CD62D0E1967E38600E904DD /* SeeAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D0D1967E38600E904DD /* SeeAnswerViewController.m */; };
 		6CD62D111967E38F00E904DD /* EvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D101967E38F00E904DD /* EvaluateViewController.m */; };
 		6CD62D141967E6DF00E904DD /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D131967E6DF00E904DD /* Constants.m */; };
+		6CD62D1B1967EC3D00E904DD /* AWSRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD62D191967EC3D00E904DD /* AWSRuntime.framework */; };
+		6CD62D1C1967EC3E00E904DD /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CD62D1A1967EC3D00E904DD /* AWSS3.framework */; };
 		F9B798B11967B7A000D97DDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B01967B7A000D97DDE /* main.m */; };
 		F9B798B41967B7A000D97DDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B31967B7A000D97DDE /* AppDelegate.m */; };
 		F9B798B71967B7A000D97DDE /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B61967B7A000D97DDE /* TopViewController.m */; };
@@ -42,6 +44,8 @@
 		6CD62D101967E38F00E904DD /* EvaluateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateViewController.m; sourceTree = "<group>"; };
 		6CD62D121967E6DF00E904DD /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		6CD62D131967E6DF00E904DD /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		6CD62D191967EC3D00E904DD /* AWSRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSRuntime.framework; path = "../../Downloads/aws-ios-sdk-1.7.1/AWSRuntime.framework"; sourceTree = "<group>"; };
+		6CD62D1A1967EC3D00E904DD /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = "../../Downloads/aws-ios-sdk-1.7.1/AWSS3.framework"; sourceTree = "<group>"; };
 		B08DDD4CEC294F42BCBB34BB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C5FE27FD02B44B44B3BED450 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B798AB1967B7A000D97DDE /* nanikore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nanikore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +68,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				01BCC12DF3334288B227E692 /* libPods.a in Frameworks */,
+				6CD62D1B1967EC3D00E904DD /* AWSRuntime.framework in Frameworks */,
+				6CD62D1C1967EC3E00E904DD /* AWSS3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +122,8 @@
 		D2D1E9B3BF5444D2B43E4545 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CD62D191967EC3D00E904DD /* AWSRuntime.framework */,
+				6CD62D1A1967EC3D00E904DD /* AWSS3.framework */,
 				C5FE27FD02B44B44B3BED450 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -444,6 +452,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/murakamishintarou/Downloads/aws-ios-sdk-1.7.1",
+				);
 				INFOPLIST_FILE = nanikore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -457,6 +469,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/murakamishintarou/Downloads/aws-ios-sdk-1.7.1",
+				);
 				INFOPLIST_FILE = nanikore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
