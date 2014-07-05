@@ -157,7 +157,7 @@
 	
 	NSData *postData = [self generateFormDataFromPostDictionary:post_dict];
 	
-    NSString *baseurl = @"http://nani-colle.com/upload";
+    NSString *baseurl = @"http://49.212.129.143:5000/upload";
     NSURL *url = [NSURL URLWithString:baseurl];
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
     if (!urlRequest) NOTIFY_AND_LEAVE(@"Error creating the URL Request");

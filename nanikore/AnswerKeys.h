@@ -12,5 +12,6 @@
 #define kAnswerQID @"qid"
 #define kAnswerName @"name"
 #define kAnswerText @"text"
+#define kAnswerAID @"aid"
 
 #endif
