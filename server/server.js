@@ -35,6 +35,11 @@ app.get('/ask', function(req, res) {
     });
 });
 
+
+app.get('/inner', function(req, res) {
+    res.render('inner.twig');
+});
+
 app.get('/answer', function(req, res) {
     res.render('answer.twig', {
         message: "Hello World"
@@ -47,12 +52,10 @@ app.post('/upload', function(req, res) {
     req.busboy.on('file', function(fieldname, file, filename) {
         console.log("Uploading: " + filename);
         filename = +new Date() + ".jpg";
-
-
         fstream = fs.createWriteStream(__dirname + '/uploads/' + filename);
         file.pipe(fstream);
         fstream.on('close', function() {
-            res.send("http://" + req.headers.host + "/uploads/" + filename)
+            res.send("http://49.212.129.143:5000/uploads/" + filename)
         });
     });
 });
@@ -68,27 +71,30 @@ var questionList = [{
     qid: 100,
     name: "default",
     text: "What's this?",
-    url: "https://dl.dropboxusercontent.com/u/6324118/toilet.png"
-}, {
-    qid: 101,
-    name: "default",
-    text: "What do you recommend?",
-    url: "https://dl.dropboxusercontent.com/u/6324118/toilet.png"
+    url: "http://49.212.129.143:5000/uploads/1404597120041.jpg"
 }];
+
+var answerList = {
+    100: [],
+};
 
 var askers = io.of('/ask').on('connection', function(socket) {
     var user = {
         'name': 'Shintaro',
         'id': socket.id
     }
+
     socket.emit('userInfo', user);
     socket.on('userInfo', function(data, fn) {
         user.name = data.name;
     })
 
     console.log('connected to ask');
+
     socket.on('ask', function(data, fn) {
         data.qid = qid;
+
+        answerList[data.qid] = [];
         questionList.push(data);
         io.of('/answer').emit('question', [data]);
 
@@ -97,29 +103,32 @@ var askers = io.of('/ask').on('connection', function(socket) {
         // qid のルームに接続
         socket.join('q' + qid);
         console.log('joining', 'q' + qid);
-        fn(true);
 
         // ここからダミー
-        var aid = 1;
         var sendDummyAnswer = function() {
             console.log('sent dummy answer to qid:', 'q' + data.qid);
             var answer = {
                 'qid': 'q' + data.qid,
                 'name': 'Ryohei',
                 'text': 'Rubber Duck!',
-                'aid': aid++
+                'aid': answerList[data.qid].length
             };
+            answerList[data.qid][answer.aid] = answer;
             askers.to('q' + data.qid).emit('answer', answer);
             answerers.to('q' + data.qid).emit('answer', answer);
         };
 
+        socket.on("eval", function(data_eval) {
+            console.log("eval received", data_eval);
+            var eval_result = Array.prototype.map.call(data_eval.eval, function(aid) {
+                return answerList[data.qid][aid]
+            });
+
+            answerers.to('q' + data.qid).emit('eval', eval_result);
+        })
+
         var interval = setInterval(sendDummyAnswer, 5000);
         sendDummyAnswer();
-
-        socket.on('eval', function(data, fn) {
-
-
-        })
 
         socket.on('disconnect', function() {
             console.log('disconnected');
@@ -135,25 +144,37 @@ var answerers = io.of('/answer').on('connection', function(socket) {
     console.log('connected to answer');
     socket.emit('question', questionList);
 
+    var interval = setInterval(function() {
+        socket.emit('active', {
+            active: io.sockets.clients().length
+        });
+    }, 5000);
+    socket.on('disconnect', function() {
+        clearInterval(interval);
+    })
+
     socket.on('answer', function(data, fn) {
-        console.log('answer', data);
+        if (listeningTo) socket.leave('q' + listeningTo);
         socket.join('q' + data.qid);
-        if (!data.qid) {
-            return fn(false);
-        }
+        listeningTo = qid;
+
+        data.aid = answerList[data.qid].length;
+
+        console.log('answer', data);
         askers.to('q' + data.qid).emit('answer', data);
         answerers.to('q' + data.qid).emit('answer', data);
-    })
+        answerList[data.qid][data.aid] = data;
+    });
 
     var listeningTo = null;
 
     socket.on('listenTo', function(qid, fn) {
         console.log("listenTo", qid);
         socket.emit('answers', answerList[qid]);
-        // if (listeningTo) socket.leave('q' + listeningTo);
+
+        if (listeningTo) socket.leave('q' + listeningTo);
         socket.join('q' + qid);
         console.log("joining room q", qid)
-        // listeningTo = qid;
+        listeningTo = qid;
     })
-
 })
