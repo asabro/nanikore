@@ -36,6 +36,24 @@ app.get('/answer', function(req, res) {
     });
 });
 
+app.post('/upload', function(req, res) {
+    var target_path, tmp_path;
+    tmp_path = req.files.image.path;
+    target_path = './uploads/' + req.files.image.name;
+    fs.rename(tmp_path, target_path, function(err) {
+        if (err) {
+            throw err;
+        }
+        fs.unlink(tmp_path, function() {
+            if (err) {
+                throw err;
+            }
+            res.send('File uploaded to: ' + target_path + ' - ' + req.files.image.size + ' bytes');
+        });
+    });
+});
+
+
 io.on('connection', function(socket) {
     console.log('connected');
     socket.emit('debug', 'connected!');

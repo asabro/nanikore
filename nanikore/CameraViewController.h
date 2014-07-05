@@ -17,5 +17,17 @@
 #import <AWSS3/AWSS3.h>
 
 @interface CameraViewController : UIImagePickerController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, AmazonServiceRequestDelegate>
-@property (nonatomic, strong) TopViewController * prevViewController;
+@property (nonatomic, retain) TopViewController * prevViewController;
+@property (nonatomic, retain) NSData* imageData;
+@property (nonatomic, retain) NSURL* imageURL;
+
+- (void) syncUpload:(NSData *) uploadImage;
+
 @end
+
+#define NOTIFY_AND_LEAVE(X) {[self cleanup:X]; return;}
+#define DATA(X)	[X dataUsingEncoding:NSUTF8StringEncoding]
+
+// Posting constants
+#define IMAGE_CONTENT @"Content-Disposition: form-data; name=\"%@\"; filename=\"image.jpg\"\r\nContent-Type: image/jpeg\r\n\r\n"
+#define BOUNDARY @"------------0x0x0x0x0x0x0x0x"

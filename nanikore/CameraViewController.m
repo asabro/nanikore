@@ -46,7 +46,7 @@
   }
   
   // UIImagePickerControllerのインスタンスを生成
-  //  UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+  UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
   
   // デリゲートを設定
   self.delegate = self;
@@ -59,24 +59,25 @@
 }
 
 // 画像が選択された時に呼ばれるデリゲートメソッド
-- (void)imagePickerController:(UIImagePickerController *)picker
-        didFinishPickingImage:(UIImage *)image
-                  editingInfo:(NSDictionary *)editingInfo
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
   // モーダルビューを閉じる
   [self dismissViewControllerAnimated:YES completion:nil];
-  
-  // Ask画面に遷移
-  [self.prevViewController pushAskViewController];
-  
-  // 画像をアップロード
-  // Get the selected image.
+
+    self.imageURL = info[UIImagePickerControllerMediaURL];
+    NSLog(@"imageURL: %@", self.imageURL);
+    self.imageData = [[NSMutableData alloc]initWithContentsOfURL:self.imageURL];
+    NSLog(@"file length: %d", [self.imageData length]);
+
+    
+    NSString *sourcePath = [[info objectForKey:@"UIImagePickerControllerMediaURL"]relativePath];
+    UISaveVideoAtPathToSavedPhotosAlbum(sourcePath,nil,nil,nil);
   
   // Convert the image to JPEG data.
-  NSData *imageData = UIImageJPEGRepresentation(image, 0.6);
-  
-  [self processDelegateUpload:imageData];
-  
+//  NSData *imageData = UIImageJPEGRepresentation(self.imageData, 0.6);
+//    self.imageData = imageData;
+  [self processDelegateUpload:self.imageData];
+    
 //  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 
@@ -95,11 +96,22 @@
 {
   // Upload image data.  Remember to set the content type.
   NSDate * date = [NSDate date];
-  
-  S3PutObjectRequest *por = [[S3PutObjectRequest alloc] initWithKey:date.stringWithISO8061Format
+ 
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"]]; // Localeの指定
+    [df setDateFormat:@"yyyyMMdd-HHmmss"];
+    // 日付(NSDate) => 文字列(NSString)に変換
+    NSDate *now = [NSDate date];
+    NSString *strNow = [df stringFromDate:now];
+    // Upload image data.  Remember to set the content type.
+    NSString* fileName = [NSString stringWithFormat:@"%@-%@.jpg", strNow, [[UIDevice currentDevice] name]];
+    NSLog(@"file length: %d", [self.imageData length]);
+    NSLog(@"%@", fileName);
+
+  S3PutObjectRequest *por = [[S3PutObjectRequest alloc] initWithKey:fileName
                                                            inBucket:[Constants pictureBucket]];
   por.contentType = @"image/jpeg";
-  por.data = imageData;
+  por.data = self.imageData;
   por.delegate = self;
   
   // Put the image data into the specified s3 bucket and object.
