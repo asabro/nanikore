@@ -19,19 +19,17 @@
   // init socketIO
   _socketIO = [[AZSocketIO alloc] initWithHost:SERVER_IP andPort:SERVER_PORT secure:NO];
   
-  [self.socketIO connectWithSuccess:^{
-    NSLog(@"Success connecting!");
+//  [self.socketIO connectWithSuccess:^{
+//    NSLog(@"Success connecting!");
 //    NSError * error;
 //    [self.socketIO emit:@"authenticate" args:@{@"username": @"ryohei"} error:&error ackWithArgs:^(NSArray *data){
 //      NSLog(@"%@", data);
 //      NSLog(@"hello");
 //    }];
-    
 //    NSLog(@"%@", error);
-    
-  } andFailure:^(NSError *error) {
-    NSLog(@"Failure connecting. error: %@", error);
-  }];
+//  } andFailure:^(NSError *error) {
+//    NSLog(@"Failure connecting. error: %@", error);
+//  }];
   
   return YES;
 }
