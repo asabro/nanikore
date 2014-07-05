@@ -6,10 +6,17 @@
 //  Copyright (c) 2014年 nae-lab. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "AnswerViewController.h"
+#import "QuestionKeys.h"
+#import "AnswerKeys.h"
+#import "OtherAnswerListViewController.h"
+
+#define kOtherAnswerListSegue @"otherAnswerList"
 
 @interface AnswerViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @end
 
 @implementation AnswerViewController
@@ -27,12 +34,36 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+  _textLabel.text = _question[kQuestionText];
+  [_textField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+  NSString * text = _textField.text;
+  
+  NSDictionary * answer =
+  @{
+    kAnswerQID: _question[kQuestionID],
+    kAnswerName: [AppDelegate username],
+    kAnswerText: text
+    };
+  
+  // send answer
+  NSLog(@"%@", answer);
+  
+  AZSocketIO * socketIO = [AppDelegate socketIO];
+  
+  
+  
+  OtherAnswerListViewController * vc = [segue destinationViewController];
+  vc.answer = answer;
 }
 
 /*

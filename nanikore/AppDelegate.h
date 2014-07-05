@@ -21,6 +21,8 @@ typedef enum {
 
 @property (strong, nonatomic) UIWindow *window;
 // data
+@property (strong, nonatomic) NSString * username;
++ (NSString *)username;
 @property (strong, nonatomic) NSMutableArray * questions;
 + (NSMutableArray *)questions;
 

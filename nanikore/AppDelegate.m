@@ -21,6 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // init socket IO
 //  [self initSocketIOAsAskMode];
+  _username = @"hogetarou";
   
   _questions = [NSMutableArray array];
   
@@ -56,6 +57,11 @@
 // ------------
 //    data
 // ------------
++ (NSString *)username {
+  AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+  return delegate.username;
+}
+
 + (NSMutableArray *)questions {
   AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
   return delegate.questions;

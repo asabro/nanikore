@@ -64,6 +64,8 @@
 		6CD62D34196811B900E904DD /* OtherAnswerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherAnswerListViewController.m; sourceTree = "<group>"; };
 		6CD62D36196811CF00E904DD /* AnswerFinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerFinishViewController.h; sourceTree = "<group>"; };
 		6CD62D37196811CF00E904DD /* AnswerFinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerFinishViewController.m; sourceTree = "<group>"; };
+		6CD62D3A1968254700E904DD /* QuestionKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionKeys.h; sourceTree = "<group>"; };
+		6CD62D3B196827E100E904DD /* AnswerKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnswerKeys.h; sourceTree = "<group>"; };
 		B08DDD4CEC294F42BCBB34BB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C5FE27FD02B44B44B3BED450 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B798AB1967B7A000D97DDE /* nanikore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nanikore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +206,7 @@
 		F9B798AD1967B7A000D97DDE /* nanikore */ = {
 			isa = PBXGroup;
 			children = (
+				6CD62D3A1968254700E904DD /* QuestionKeys.h */,
 				6CD62D2919680FFA00E904DD /* AnswerMode */,
 				6CD62D2819680FDA00E904DD /* AskMode */,
 				6CD62D121967E6DF00E904DD /* Constants.h */,
@@ -215,6 +218,7 @@
 				F9B798AE1967B7A000D97DDE /* Supporting Files */,
 				6CD62D2519680D6B00E904DD /* ViewController.h */,
 				6CD62D2619680D6B00E904DD /* ViewController.m */,
+				6CD62D3B196827E100E904DD /* AnswerKeys.h */,
 			);
 			path = nanikore;
 			sourceTree = "<group>";
