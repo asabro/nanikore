@@ -1,0 +1,109 @@
+body {
+    font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: black;
+}
+
+
+#quesitonImage{
+	width: 320px;
+	height: 322px;
+	position: absolute;
+	top: 110px;
+	left: 160px;
+	background-color: white;
+	border-radius: 10px;
+}
+
+#inner-wrapper{
+	position: absolute;
+	width: 640px;
+	height: 1080px;
+	border: 1px solid lightgray;
+	background-image: url("/assets/jp_question.jpg");
+	background-repeat: no-repeat;
+}
+
+.countDownView{
+	position: absolute;
+	top: 0px;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	font-size: 20em;
+	font-weight: bold;
+	background-color: black;
+	color: white;
+}
+
+#restTimer{
+	position: absolute;
+	left: 517px;
+	top: 123px;
+	font-size: 3em;
+	font-weight: bold;
+}
+
+#userCounter{
+	position: absolute;
+	left: 540px;
+	top: 360px;
+	font-size: 2.5em;
+	font-weight: bold;
+}
+
+#questionText{
+	position: absolute;
+	left: 201px;
+	top: 500px;
+	font-size: 2.4em;
+	font-weight: bold;
+	font-family: sans-serif;
+
+}
+
+#answerArea{
+	width: 500px;
+	height: 100px;
+	padding: 0 0.3em;
+	position: absolute;
+	top: 626px;
+	left: 0px;
+	font-size: 3em;
+
+	background-color: black;
+	color: white;
+}
+
+#sendButton{
+	width: 140px;
+	height: 100px;
+	top: 626px;
+	left: 500px;
+	text-align: center;
+	position: absolute;
+	background-color: black;
+	color: yellow;
+	font-weight: bold;
+	padding: 15px 0;
+	font-size: 3em;
+}
+
+#answersView{
+	position: absolute;
+	top: 756px;
+	font-size: 2em;
+	padding: 10px;
+	width: 100%;
+	color: white;
+}
+
+#answersView .answer{
+	height: 120px;
+	width: 100%;
+}
+
+#answersView .answer .answerName{
+	text-align: right;
+	font-size: 70%;
+	color: gray;
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <title>
+    </title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/inner.js"></script>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css" />
+    <link rel="stylesheet" href="/inner.css" />
+    <style>
+    body {
+	    padding-top: 0;
+    }</style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div id="inner-wrapper">
+	<div id="restTimer">15</div>
+	<div id="userCounter">10</div>
+	<img src="/assets/washletbig.jpg" id="quesitonImage">
+	<textarea id="answerArea" placeholder="Answer here"></textarea><div id="sendButton">SEND</div>
+	<div class="questionText" id="questionText">
+		これはナニ?
+	</div>
+{# 	<div class="countDownView" id="countDownView1">
+		1
+	</div>
+	<div class="countDownView" id="countDownView2">
+		2
+	</div>
+	<div class="countDownView" id="countDownView3">
+		3
+	</div>
+ #}	<div id="answersView">
+		<div class="answer">
+		<div class="answerText">This is sample text.</div>
+			<div class="answerName">Ryohei</div>
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>

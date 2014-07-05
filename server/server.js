@@ -52,12 +52,10 @@ app.post('/upload', function(req, res) {
     req.busboy.on('file', function(fieldname, file, filename) {
         console.log("Uploading: " + filename);
         filename = +new Date() + ".jpg";
-
-
         fstream = fs.createWriteStream(__dirname + '/uploads/' + filename);
         file.pipe(fstream);
         fstream.on('close', function() {
-            res.send("http://" + req.headers.host + "/uploads/" + filename)
+            res.send("http://49.212.129.143:5000/uploads/" + filename)
         });
     });
 });
@@ -73,12 +71,17 @@ var questionList = [{
     qid: 100,
     name: "default",
     text: "What's this?",
-    url: "https://dl.dropboxusercontent.com/u/6324118/toilet.png"
+    url: "/assets/manekineko.jpg"
 }, {
     qid: 101,
     name: "default",
-    text: "What do you recommend?",
-    url: "https://dl.dropboxusercontent.com/u/6324118/toilet.png"
+    text: "How to use it?",
+    url: "/assets/washletbig.jpg"
+}, {
+    qid: 101,
+    name: "default",
+    text: "How to use it?",
+    url: "/assets/washletbig.jpg"
 }];
 
 var askers = io.of('/ask').on('connection', function(socket) {

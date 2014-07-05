@@ -3,6 +3,15 @@ body {
     font-family: "Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+html {
+}
+
+#wireframe{
+	width: 100%;
+	height: 888px;
+	border: 0px;
+}
+
 
 li#emotion-status-li-1{	color: #e74c3c;}
 li#emotion-status-li-2{	color: #2980b9;}
@@ -11,55 +20,4 @@ li#emotion-status-li-4{	color: #27ae60;}
 li#emotion-status-li-5{	color: #8e44ad;}
 
 
-#wireframe{
-	width: 100%;
-	height: 888px;
-	border: 0px;
-}
-
-#inner-wrapper{
-	position: absolute;
-	width: 640px;
-	height: 1080px;
-	border: 1px solid lightgray;
-	background-image: url("/assets/jp_question(bar).png");
-	background-repeat: no-repeat;
-}
-
-.countDownView{
-	position: absolute;
-	top: 0px;
-	text-align: center;
-	width: 100%;
-	height: 100%;
-	font-size: 20em;
-	font-weight: bold;
-	background-color: white;
-}
-
-#restTimer{
-	position: absolute;
-	left: 517px;
-	top: 123px;
-	font-size: 3em;
-	font-weight: bold;
-}
-
-#userCounter{
-	position: absolute;
-	left: 540px;
-	top: 360px;
-	font-size: 2.5em;
-	font-weight: bold;
-}
-
-#questionText{
-	position: absolute;
-	left: 201px;
-	top: 500px;
-	font-size: 3em;
-	font-weight: bold;
-	font-family: sans-serif;
-
-}
 
