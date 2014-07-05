@@ -13,6 +13,7 @@
 		6CD62D0E1967E38600E904DD /* SeeAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D0D1967E38600E904DD /* SeeAnswerViewController.m */; };
 		6CD62D111967E38F00E904DD /* EvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D101967E38F00E904DD /* EvaluateViewController.m */; };
 		6CD62D141967E6DF00E904DD /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D131967E6DF00E904DD /* Constants.m */; };
+		6CD62D2719680D6B00E904DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D2619680D6B00E904DD /* ViewController.m */; };
 		F9B798B11967B7A000D97DDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B01967B7A000D97DDE /* main.m */; };
 		F9B798B41967B7A000D97DDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B31967B7A000D97DDE /* AppDelegate.m */; };
 		F9B798B71967B7A000D97DDE /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B61967B7A000D97DDE /* TopViewController.m */; };
@@ -46,6 +47,8 @@
 		6CD62D131967E6DF00E904DD /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		6CD62D191967EC3D00E904DD /* AWSRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSRuntime.framework; path = "../../Downloads/aws-ios-sdk-1.7.1/AWSRuntime.framework"; sourceTree = "<group>"; };
 		6CD62D1A1967EC3D00E904DD /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = "../../Downloads/aws-ios-sdk-1.7.1/AWSS3.framework"; sourceTree = "<group>"; };
+		6CD62D2519680D6B00E904DD /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6CD62D2619680D6B00E904DD /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B08DDD4CEC294F42BCBB34BB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C5FE27FD02B44B44B3BED450 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B798AB1967B7A000D97DDE /* nanikore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nanikore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +172,8 @@
 				F9B798B81967B7A000D97DDE /* Main.storyboard */,
 				F9B798BB1967B7A000D97DDE /* Images.xcassets */,
 				F9B798AE1967B7A000D97DDE /* Supporting Files */,
+				6CD62D2519680D6B00E904DD /* ViewController.h */,
+				6CD62D2619680D6B00E904DD /* ViewController.m */,
 			);
 			path = nanikore;
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CD62D2719680D6B00E904DD /* ViewController.m in Sources */,
 				F9B798B71967B7A000D97DDE /* TopViewController.m in Sources */,
 				6C3B703D1967CE4000B67EE7 /* CameraViewController.m in Sources */,
 				F9B798B41967B7A000D97DDE /* AppDelegate.m in Sources */,
