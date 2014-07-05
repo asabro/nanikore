@@ -40,7 +40,6 @@
                          @"url": @"http://sample.jp"
                          };
   
-  
   [socketIO emit:@"ask" args:ask error:&error ackWithArgs:^(NSArray *data){
     NSLog(@"%@", data);
     NSLog(@"hello");
