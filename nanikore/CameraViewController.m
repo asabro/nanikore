@@ -58,27 +58,40 @@
   self.allowsEditing = YES;
 }
 
-// 画像が選択された時に呼ばれるデリゲートメソッド
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-  // モーダルビューを閉じる
-  [self dismissViewControllerAnimated:YES completion:nil];
 
-    self.imageURL = info[UIImagePickerControllerMediaURL];
-    NSLog(@"imageURL: %@", self.imageURL);
-    self.imageData = [[NSMutableData alloc]initWithContentsOfURL:self.imageURL];
-    NSLog(@"file length: %d", [self.imageData length]);
-
-    
-    NSString *sourcePath = [[info objectForKey:@"UIImagePickerControllerMediaURL"]relativePath];
-    UISaveVideoAtPathToSavedPhotosAlbum(sourcePath,nil,nil,nil);
-  
-  // Convert the image to JPEG data.
-//  NSData *imageData = UIImageJPEGRepresentation(self.imageData, 0.6);
+//// 画像が選択された時に呼ばれるデリゲートメソッド
+//- (void)imagePickerController:(UIImagePickerController *)picker
+//        didFinishPickingImage:(UIImage *)image
+//                  editingInfo:(NSDictionary *)editingInfo
+//{
+//    // モーダルビューを閉じる
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//    
+//    // Ask画面に遷移
+//    [self.prevViewController pushAskViewController];
+//    
+//    // 画像をアップロード
+//    // Get the selected image.
+//    
+//    // Convert the image to JPEG data.
+//    NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+//    NSLog(@"%d", [imageData length]);
 //    self.imageData = imageData;
-  [self processDelegateUpload:self.imageData];
+//    [self processDelegateUpload:imageData];
+//    
+//    //  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+//}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    // Get the selected image.
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
-//  [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    // Convert the image to JPEG data.
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.6);
+    self.imageData = imageData;
+    [self upload];
+
 }
 
 // 画像の選択がキャンセルされた時に呼ばれるデリゲートメソッド
@@ -91,6 +104,89 @@
 }
 
 #pragma mark - AmazonServiceRequestDelegate
+
+- (NSData*)generateFormDataFromPostDictionary:(NSDictionary*)dict
+{
+    id boundary = BOUNDARY;
+    NSArray* keys = [dict allKeys];
+    NSMutableData* result = [NSMutableData data];
+	
+    for (int i = 0; i < [keys count]; i++)
+    {
+        id value = [dict valueForKey: [keys objectAtIndex:i]];
+        [result appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+		
+		if ([value isKindOfClass:[NSData class]])
+		{
+			// handle image data
+			NSString *formstring = [NSString stringWithFormat:IMAGE_CONTENT, [keys objectAtIndex:i]];
+			[result appendData: DATA(formstring)];
+			[result appendData:value];
+		}
+		
+		NSString *formstring = @"\r\n";
+        [result appendData:DATA(formstring)];
+    }
+	
+	NSString *formstring =[NSString stringWithFormat:@"--%@--\r\n", boundary];
+    [result appendData:DATA(formstring)];
+    return result;
+}
+
+
+- (void) cleanup: (NSString *) output
+{
+	self.imageData = nil;
+    //    NSLog(@"******** %@", output);
+}
+
+// NSOperationQueueによる非同期化を見据えてmainにしています。
+- (void) upload
+{
+
+    if (!self.imageData) {
+		NOTIFY_AND_LEAVE(@"Please set image before uploading.");
+    }
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    NSString* MultiPartContentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", BOUNDARY];
+    
+	NSMutableDictionary* post_dict = [[NSMutableDictionary alloc] init];
+	[post_dict setObject:@"testimage" forKey:@"filename"];
+    [post_dict setObject:self.imageData forKey:@"data[User][image]"];
+	
+	NSData *postData = [self generateFormDataFromPostDictionary:post_dict];
+	
+    NSString *baseurl = @"http://nani-colle.com/upload";
+    NSURL *url = [NSURL URLWithString:baseurl];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+    if (!urlRequest) NOTIFY_AND_LEAVE(@"Error creating the URL Request");
+	
+    [urlRequest setHTTPMethod: @"POST"];
+  	[urlRequest setValue:MultiPartContentType forHTTPHeaderField: @"Content-Type"];
+    [urlRequest setHTTPBody:postData];
+	
+    NSError *error;
+    NSURLResponse *response;
+	NSData* result = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
+    //NSLog(@"***** result =%@", result);
+    
+    if (!result)
+	{
+		[self cleanup:[NSString stringWithFormat:@"upload error: %@", [error localizedDescription]]];
+		return;
+	}
+	
+	// Return results
+    NSString *returnURL = [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
+    NSLog(@"***** outstring =%@", returnURL);
+	[self cleanup: returnURL];
+    
+    // しんちゃんへ: ここの returnURL にアップロード済みのURLが入っている
+
+    [self showAlertMessage:@"The image was successfully uploaded." withTitle:@"Upload Completed"];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+}
+
 
 - (void)processDelegateUpload:(NSData *)imageData
 {
@@ -105,13 +201,14 @@
     NSString *strNow = [df stringFromDate:now];
     // Upload image data.  Remember to set the content type.
     NSString* fileName = [NSString stringWithFormat:@"%@-%@.jpg", strNow, [[UIDevice currentDevice] name]];
-    NSLog(@"file length: %d", [self.imageData length]);
     NSLog(@"%@", fileName);
+    NSLog(@"%d", [self.imageData length]);
 
   S3PutObjectRequest *por = [[S3PutObjectRequest alloc] initWithKey:fileName
                                                            inBucket:[Constants pictureBucket]];
   por.contentType = @"image/jpeg";
   por.data = self.imageData;
+
   por.delegate = self;
   
   // Put the image data into the specified s3 bucket and object.

@@ -18,7 +18,7 @@
 
 @interface CameraViewController : UIImagePickerController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, AmazonServiceRequestDelegate>
 @property (nonatomic, retain) TopViewController * prevViewController;
-@property (nonatomic, retain) NSData* imageData;
+@property (nonatomic, strong) NSData* imageData;
 @property (nonatomic, retain) NSURL* imageURL;
 
 - (void) syncUpload:(NSData *) uploadImage;

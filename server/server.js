@@ -3,6 +3,7 @@ var app = express();
 var server = require('http').Server(app);
 var fs = require('fs');
 var AWS = require('aws-sdk');
+var busboy = require('connect-busboy');
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'twig');
@@ -10,7 +11,11 @@ app.set('twig options', {
     strict_variables: false
 });
 
+app.use(busboy());
+
 app.use(express.static(__dirname + '/public'));
+app.use('/uploads', express.static(__dirname + '/uploads'));
+
 server.listen(5000, function() {
     console.log('Now listening on port 5000');
 });
@@ -37,18 +42,17 @@ app.get('/answer', function(req, res) {
 });
 
 app.post('/upload', function(req, res) {
-    var target_path, tmp_path;
-    tmp_path = req.files.image.path;
-    target_path = './uploads/' + req.files.image.name;
-    fs.rename(tmp_path, target_path, function(err) {
-        if (err) {
-            throw err;
-        }
-        fs.unlink(tmp_path, function() {
-            if (err) {
-                throw err;
-            }
-            res.send('File uploaded to: ' + target_path + ' - ' + req.files.image.size + ' bytes');
+    var fstream;
+    req.pipe(req.busboy);
+    req.busboy.on('file', function(fieldname, file, filename) {
+        console.log("Uploading: " + filename);
+        filename = +new Date() + ".jpg";
+
+
+        fstream = fs.createWriteStream(__dirname + '/uploads/' + filename);
+        file.pipe(fstream);
+        fstream.on('close', function() {
+            res.send("http://" + req.headers.host + "/uploads/" + filename)
         });
     });
 });
