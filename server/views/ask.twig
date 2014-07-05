@@ -1,0 +1,49 @@
+{% extends "template.twig" %}
+
+{% block head %}
+<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+<script src="/js/ask.js"></script>
+{% endblock %}
+
+{% block title %}
+Nani-colle ask debug console
+{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block container %}
+
+<h3>Ask a question</h3>
+
+<form role="form" id="form-ask">
+  <div class="form-group">
+    <label for="inputName">Name</label>
+    <input type="text" class="form-control" id="inputName" placeholder="Enter your name" value="Shintaro">
+  </div>
+  <div class="form-group">
+    <label for="inputText">Text</label>
+    <input type="text" class="form-control" id="inputText" placeholder="Enter question text" value="How to use it?">
+  </div>
+  <div class="form-group">
+    <label for="inputURL">URL</label>
+    <input type="url" class="form-control" id="inputURL" placeholder="Enter Image URL" required="required" value="https://dl.dropboxusercontent.com/u/6324118/toilet.png">
+  </div>
+
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<h3>Received Answer</h3>
+
+<ul id="answer">
+
+	
+</ul>
+
+
+<h3>Console</h3>
+<ul id="console">
+	
+</ul>
+
+{% endblock %}

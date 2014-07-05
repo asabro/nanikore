@@ -51,8 +51,7 @@ var questionList = [{
     url: "https://dl.dropboxusercontent.com/u/6324118/toilet.png"
 }];
 
-io.of('/ask').on('connection', function(socket) {
-
+var askers = io.of('/ask').on('connection', function(socket) {
     var user = {
         'name': 'Shintaro',
         'id': socket.id
@@ -78,17 +77,20 @@ io.of('/ask').on('connection', function(socket) {
         // ここからダミー
         var aid = 1;
         var sendDummyAnswer = function() {
-            console.log('sent dummy answer to qid:', data.qid);
-            io.sockets.to('q' + data.qid).emit('answer', {
+            console.log('sent dummy answer to qid:', 'q' + data.qid);
+            var answer = {
                 'qid': 'q' + data.qid,
                 'name': 'Ryohei',
                 'text': 'Benjo!',
                 'aid': aid++
-            });
+            };
+            askers.to('q' + data.qid).emit('answer', answer);
+            answerers.to('q' + data.qid).emit('answer', answer);
         };
 
         var interval = setInterval(sendDummyAnswer, 5000);
         sendDummyAnswer();
+
         socket.on('eval', function(data, fn) {
 
 
@@ -104,7 +106,7 @@ io.of('/ask').on('connection', function(socket) {
 
 })
 
-io.of('/answer').on('connection', function(socket) {
+var answerers = io.of('/answer').on('connection', function(socket) {
     console.log('connected to answer');
     socket.emit('question', questionList);
 
@@ -114,7 +116,8 @@ io.of('/answer').on('connection', function(socket) {
         if (!data.qid) {
             return fn(false);
         }
-        io.sockets.to('q' + data.qid).emit('answer', data);
+        askers.to('q' + data.qid).emit('answer', data);
+        answerers.to('q' + data.qid).emit('answer', data);
     })
 
     var listeningTo = null;
