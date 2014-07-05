@@ -435,7 +435,7 @@
                         <outlet property="imageView" destination="kcl-7Y-E3G" id="J1R-Tv-Wl6"/>
                         <outlet property="label" destination="Kd0-Zr-TRA" id="o0p-SX-Rji"/>
                         <outlet property="tableView" destination="aOj-3x-bHG" id="YeL-Vz-AX6"/>
-                        <segue destination="D6g-SX-e2J" kind="push" id="i7G-ah-7m5"/>
+                        <segue destination="D6g-SX-e2J" kind="push" identifier="finish" id="i7G-ah-7m5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YEj-4p-fwk" userLabel="First Responder" sceneMemberID="firstResponder"/>

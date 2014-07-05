@@ -10,6 +10,7 @@
 #import "OtherAnswerCell.h"
 #import "AppDelegate.h"
 #import "AnswerKeys.h"
+#import "AnswerFinishViewController.h"
 
 @interface OtherAnswerListViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *label;
@@ -42,6 +43,8 @@
   
   AppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
   appDelegate.otherAnswerViewController = self;
+  
+  [self performSelector:@selector(pushFinishView) withObject:nil afterDelay:5.0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,16 +53,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+- (void)pushFinishView {
+  [self performSegueWithIdentifier:@"finish" sender:self];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+  AnswerFinishViewController * vc = [segue destinationViewController];
+  vc.answer1 = [AppDelegate answers][0];
+  vc.answer2 = [AppDelegate answers][1];
 }
-*/
 
 #pragma mark - data source
 
