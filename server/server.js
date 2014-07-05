@@ -11,7 +11,10 @@ app.set('twig options', {
 });
 
 app.use(express.static(__dirname + '/public'));
-server.listen(5000);
+server.listen(5000, function() {
+    console.log('Now listening on port 5000');
+});
+
 var io = require('socket.io').listen(server);
 
 app.get('/', function(req, res) {

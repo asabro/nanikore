@@ -21,7 +21,7 @@
     "aws-sdk": "^2.0.4",
     "express": "^4.5.0",
     "node-debug": "^0.1.0",
-    "socket.io": "^1.0.6",
+    "socket.io": "^0.9.17",
     "twig": "^0.7.2"
   }
 }
