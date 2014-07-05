@@ -35,7 +35,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="mainLabel" destination="I2K-r4-lz7" id="AD9-ec-rXA"/>
+                <outlet property="mainLabel" destination="JEZ-Jh-HAV" id="H9O-vE-aSP"/>
                 <outlet property="nameLabel" destination="I2K-r4-lz7" id="gdN-E1-19g"/>
             </connections>
         </tableViewCell>
