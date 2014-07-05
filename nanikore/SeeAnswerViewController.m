@@ -104,15 +104,21 @@
   SeeAnswerCell * cell = (SeeAnswerCell *)[tableView cellForRowAtIndexPath:indexPath];
   
   if (!cell.gold.hidden || !cell.silver.hidden) return;
-  
+    
+    NSDictionary* answer = _answers[indexPath.row];
   if (_selectCounter == 0) {
     cell.gold.hidden = NO;
+      self.goldAid = answer[kAnswerAID];
   } else if (_selectCounter == 1) {
     cell.silver.hidden = NO;
+      self.silverAid = answer[kAnswerAID];
   }
   
   _selectCounter++;
   if ((_selectCounter >= 2) || (_selectCounter >= _answers.count)) {
+      AZSocketIO* socketIO = [AppDelegate askSocketIO];
+      [socketIO emit:@"eval" args:@{@"qid": @0, @"eval": @[self.goldAid, self.silverAid]} error:nil ack:^{
+      }];
     [self showArigatoButton];
   }
 }
