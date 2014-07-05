@@ -118,6 +118,15 @@
                 top: 1.125em;
                 left: 1.125em;
             }
+
+#inner-frame-iframe{
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0.5);
+    -webkit-transform-origin: 0 0;  
+}
+
+
         </style>
     </head>
     <body>
@@ -131,7 +140,7 @@
                 <div id="camera" class="border"></div>
                 <div id="detect" class="border"></div>
                 <div id="inner-frame" class="frame">
-                 
+                <iframe frameborder="0" id="inner-frame-iframe" src="/inner"></iframe>
                 </div>
                 <div id="home" class="border">
                     <div id="home-center" class="border"></div>

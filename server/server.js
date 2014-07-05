@@ -35,6 +35,11 @@ app.get('/ask', function(req, res) {
     });
 });
 
+
+app.get('/inner', function(req, res) {
+    res.render('inner.twig');
+});
+
 app.get('/answer', function(req, res) {
     res.render('answer.twig', {
         message: "Hello World"
