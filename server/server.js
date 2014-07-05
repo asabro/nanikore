@@ -89,6 +89,7 @@ var askers = io.of('/ask').on('connection', function(socket) {
         'name': 'Shintaro',
         'id': socket.id
     }
+
     socket.emit('userInfo', user);
     socket.on('userInfo', function(data, fn) {
         user.name = data.name;
@@ -105,7 +106,6 @@ var askers = io.of('/ask').on('connection', function(socket) {
         // qid のルームに接続
         socket.join('q' + qid);
         console.log('joining', 'q' + qid);
-        fn(true);
 
         // ここからダミー
         var aid = 1;
@@ -124,11 +124,6 @@ var askers = io.of('/ask').on('connection', function(socket) {
         var interval = setInterval(sendDummyAnswer, 5000);
         sendDummyAnswer();
 
-        socket.on('eval', function(data, fn) {
-
-
-        })
-
         socket.on('disconnect', function() {
             console.log('disconnected');
             clearInterval(interval);
@@ -143,12 +138,19 @@ var answerers = io.of('/answer').on('connection', function(socket) {
     console.log('connected to answer');
     socket.emit('question', questionList);
 
+    var interval = setInterval(function() {
+        socket.emit('active', {
+            active: io.sockets.clients().length
+        });
+    }, 5000);
+    socket.on('disconnect', function() {
+        clearInterval(interval);
+    })
+
+
     socket.on('answer', function(data, fn) {
         console.log('answer', data);
         socket.join('q' + data.qid);
-        if (!data.qid) {
-            return fn(false);
-        }
         askers.to('q' + data.qid).emit('answer', data);
         answerers.to('q' + data.qid).emit('answer', data);
     })
@@ -161,5 +163,4 @@ var answerers = io.of('/answer').on('connection', function(socket) {
         console.log("joining room q", qid)
         // listeningTo = qid;
     })
-
 })

@@ -1,3 +1,5 @@
+var timelimit = 15;
+
 $(function() {
     var socket = io.connect('/answer');
     socket.emit('debug', 'connected (answer)');
@@ -27,13 +29,26 @@ $(function() {
 
 
     socket.on('question', function(data, fn) {
-        questionList.push(data);
-        console.log(questionList);
+        console.log(data, questionList);
+        questionList = questionList.concat(data);
+        console.log(data, questionList);
+        $("#waitView").hide();
+        $("#answersView").html('');
 
         if (started) return;
         started = true;
+        nextQuestion();
+    });
 
-        var question = data[data.length - 1];
+    var question;
+    var nextQuestion = function() {
+        sent = false;
+        $("#answerArea").attr("disabled", false);
+        $("#answersView").html('');
+        question = questionList[0];
+        questionList.splice(0, 1);
+
+        console.log(question, questionList)
 
         $(".countDownView").show();
         $("#quesitonImage").attr('src', question.url);
@@ -51,30 +66,45 @@ $(function() {
         }, 1000);
 
         function startAnswer() {
-            var endDate = +new Date() + 15 * 1000;
+            var endDate = +new Date() + timelimit * 1000;
             var timer = setInterval(function() {
                 var sec = Math.floor((endDate - (+new Date())) / 1000);
                 $("#restTimer").text(sec);
                 $("#userCounter").text(20);
             });
+
             setTimeout(function() {
-                $("#result").fadeOut();
-            }, 10000);
+                clearInterval(timer);
+                setTimeout(function(arguments) {
+                    if (questionList.length) {
+                        nextQuestion();
+                    } else {
+                        $("#waitView").show();
+                        started = false;
+                    }
+
+                }, 5000);
+            }, timelimit * 1000);
         }
-        $("#sendButton").click(function() {
-            var answer = $("#answerArea").attr("readonly", "readonly").val(); {
-                qid: question.qid
-                answer:
+    }
 
-            }
+    var sent = false;
+    $("#sendButton").click(function() {
+        if (sent) return;
+        sent = true;
+        $("#answerArea").attr("disabled", "disabled");
+        var answer = {
+            qid: question.qid,
+            text: $("#answerArea").val(),
+            name: name,
+        };
+        socket.emit('answer', answer);
+        $("#answerArea").val('');
+    })
 
-        })
 
-        socket.on('answer', function(data, fn) {
-
-
-        });
+    socket.on('answer', function(data, fn) {
+        $('<div class="answer"><div class="answerText">' + data.text + '</div><div class="answerName">' + data.name + '</div></div>').appendTo("#answersView");
     });
-
 
 });

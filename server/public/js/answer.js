@@ -26,7 +26,7 @@ $(function() {
         for (var i = 0; i < data.length; i++) {
             var q = data[i];
             var qid = q.qid;
-            $("<li>" + q.name + ": " + q.text + "</li>").appendTo("#questions").click(function(qid) {
+            $("<li>" + q.name + ": " + q.text + "<img src='" + q.url + "' width='100'></li>").appendTo("#questions").click(function(qid) {
                 return function() {
                     console.log("listening to answer qid: ", qid);
                     $("#inputQId").val(qid);
@@ -34,5 +34,6 @@ $(function() {
                 }
             }(qid));
         }
+
     });
 })
