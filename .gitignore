@@ -26,3 +26,5 @@ DerivedData
 #
 Pods/
 node_modules
+
+Constants.h
