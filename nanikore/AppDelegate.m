@@ -54,6 +54,14 @@
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+// ------------
+//    data
+// ------------
++ (NSMutableArray *)questions {
+  AppDelegate * delegate = [[UIApplication sharedApplication] delegate];
+  return delegate.questions;
+}
+
 // ============
 
 - (void)initSocketIOAsAskMode {

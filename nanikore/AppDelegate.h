@@ -22,6 +22,7 @@ typedef enum {
 @property (strong, nonatomic) UIWindow *window;
 // data
 @property (strong, nonatomic) NSMutableArray * questions;
++ (NSMutableArray *)questions;
 
 // web api
 @property (strong, nonatomic) AZSocketIO * socketIO;
