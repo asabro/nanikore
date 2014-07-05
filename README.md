@@ -4,4 +4,4 @@ nanikore
 
 nanikore - camera / quiz
 
-!()[assets/naruhodo.psd]
+![assets/naruhodo.psd]()
