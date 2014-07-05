@@ -51,7 +51,6 @@
 	NSData *data = [NSData dataWithContentsOfURL:url];
 	UIImage *image = [[UIImage alloc] initWithData:data];
   vc.image = image;
-  
 }
 
 - (void)didReceiveMemoryWarning
