@@ -24,9 +24,9 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor blackColor];
+  [super viewDidLoad];
+  self.view.backgroundColor = [UIColor blackColor];
+  [self setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated
