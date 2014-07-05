@@ -16,6 +16,7 @@
 
 @interface AnswerViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @end
 
@@ -35,6 +36,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
   _textLabel.text = _question[kQuestionText];
+  _imageView.image = _image;
 
     // listenTo を送る
     AZSocketIO * socketIO = [AppDelegate answerSocketIO];
@@ -70,6 +72,7 @@
   
   OtherAnswerListViewController * vc = [segue destinationViewController];
   vc.answer = answer;
+  vc.image = self.image;
 }
 
 /*

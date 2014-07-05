@@ -32,6 +32,7 @@
   [super viewDidLoad];
   // Do any additional setup after loading the view.
   _questions = [AppDelegate questions];
+//  [self performSegueWithIdentifier:@"countDown" sender:self];
 }
 
 - (IBAction)buttonPush:(id)sender{
@@ -46,7 +47,8 @@
   NSDictionary * question;
   question = _questions[index];
   vc.question = question;
-  NSString *URLString = question[kQuestionImgURL];
+//  NSString *URLString = question[kQuestionImgURL];
+  NSString *URLString = @"http://49.212.129.143:5000/uploads/1404578052437.jpg";
 	NSURL *url = [NSURL URLWithString:URLString];
 	NSData *data = [NSData dataWithContentsOfURL:url];
 	UIImage *image = [[UIImage alloc] initWithData:data];

@@ -53,6 +53,9 @@
 		6CD62DB219687DE500E904DD /* Q_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D9D19687DE500E904DD /* Q_top.png */; };
 		6CD62DB319687DE500E904DD /* rogo.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D9E19687DE500E904DD /* rogo.pdf */; };
 		6CD62DB419687DE500E904DD /* toilet.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62D9F19687DE500E904DD /* toilet.png */; };
+		6CD62DB81968889D00E904DD /* A_judgement(frame).png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62DB51968889D00E904DD /* A_judgement(frame).png */; };
+		6CD62DB91968889D00E904DD /* A_judgement(background).png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62DB61968889D00E904DD /* A_judgement(background).png */; };
+		6CD62DBA1968889D00E904DD /* A_arigatou_bak.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CD62DB71968889D00E904DD /* A_arigatou_bak.png */; };
 		F9B798B11967B7A000D97DDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B01967B7A000D97DDE /* main.m */; };
 		F9B798B41967B7A000D97DDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B31967B7A000D97DDE /* AppDelegate.m */; };
 		F9B798B71967B7A000D97DDE /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B61967B7A000D97DDE /* TopViewController.m */; };
@@ -136,6 +139,9 @@
 		6CD62D9D19687DE500E904DD /* Q_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Q_top.png; sourceTree = "<group>"; };
 		6CD62D9E19687DE500E904DD /* rogo.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = rogo.pdf; sourceTree = "<group>"; };
 		6CD62D9F19687DE500E904DD /* toilet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toilet.png; sourceTree = "<group>"; };
+		6CD62DB51968889D00E904DD /* A_judgement(frame).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "A_judgement(frame).png"; sourceTree = "<group>"; };
+		6CD62DB61968889D00E904DD /* A_judgement(background).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "A_judgement(background).png"; sourceTree = "<group>"; };
+		6CD62DB71968889D00E904DD /* A_arigatou_bak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = A_arigatou_bak.png; sourceTree = "<group>"; };
 		B08DDD4CEC294F42BCBB34BB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C5FE27FD02B44B44B3BED450 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B798AB1967B7A000D97DDE /* nanikore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nanikore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,6 +273,9 @@
 		6CD62D8A19687DE500E904DD /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				6CD62DB51968889D00E904DD /* A_judgement(frame).png */,
+				6CD62DB61968889D00E904DD /* A_judgement(background).png */,
+				6CD62DB71968889D00E904DD /* A_arigatou_bak.png */,
 				6CD62D8B19687DE500E904DD /* A_arigatou.png */,
 				6CD62D8C19687DE500E904DD /* A_judgement(yellow).png */,
 				6CD62D8D19687DE500E904DD /* A_judgement.png */,
@@ -464,12 +473,14 @@
 				6CD62DAF19687DE500E904DD /* Q_selectA.png in Resources */,
 				6CD62DA919687DE500E904DD /* Q_collectA.png in Resources */,
 				6CD62D5019686D5D00E904DD /* Q_selectA.png in Resources */,
+				6CD62DB81968889D00E904DD /* A_judgement(frame).png in Resources */,
 				6CD62DA719687DE500E904DD /* Q_collectA(gray) のコピー.png in Resources */,
 				6CD62DA219687DE500E904DD /* A_judgement.png in Resources */,
 				6CD62DAC19687DE500E904DD /* Q_gold.png in Resources */,
 				6CD62DA419687DE500E904DD /* A_keyboard.png in Resources */,
 				6CD62D461968599100E904DD /* Q_question.png in Resources */,
 				6CD62DB419687DE500E904DD /* toilet.png in Resources */,
+				6CD62DB91968889D00E904DD /* A_judgement(background).png in Resources */,
 				6CD62D4A1968640200E904DD /* Q_collectA(gray).png in Resources */,
 				6CD62DA119687DE500E904DD /* A_judgement(yellow).png in Resources */,
 				6CD62DAB19687DE500E904DD /* Q_collectA_cellのコピー.png in Resources */,
@@ -483,6 +494,7 @@
 				6CD62D481968627D00E904DD /* Q_top.png in Resources */,
 				6CD62D5E19687B3400E904DD /* A_keyboardtop.png in Resources */,
 				6CD62DAE19687DE500E904DD /* Q_question.png in Resources */,
+				6CD62DBA1968889D00E904DD /* A_arigatou_bak.png in Resources */,
 				6CD62DB319687DE500E904DD /* rogo.pdf in Resources */,
 				6CD62DAD19687DE500E904DD /* Q_gold.psd in Resources */,
 				6CD62D5A196875C700E904DD /* Q_arigato_button.png in Resources */,

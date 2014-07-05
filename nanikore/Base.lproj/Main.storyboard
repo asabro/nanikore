@@ -368,15 +368,27 @@
                                             <segue destination="9ph-PZ-O2q" kind="push" identifier="otherAnswerList" id="SaF-2H-WQz"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6H-fy-KVj">
+                                        <rect key="frame" x="106" y="14" width="194" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kj8-8a-K9a">
+                                <rect key="frame" x="72" y="48" width="170" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="asS-Dn-4iv"/>
                     <connections>
+                        <outlet property="imageView" destination="kj8-8a-K9a" id="cNA-Os-Yn3"/>
                         <outlet property="textField" destination="cLg-sj-kNx" id="gnz-8L-kHF"/>
+                        <outlet property="textLabel" destination="a6H-fy-KVj" id="CL2-nn-rbZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAt-GT-17T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -395,20 +407,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8v-YA-CAt">
-                                <rect key="frame" x="137" y="231" width="46" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A_judgement(background).png" translatesAutoresizingMaskIntoConstraints="NO" id="iOq-Td-l70" customClass="A_ju">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="D6g-SX-e2J" kind="push" id="g0E-Ef-S8I"/>
-                                </connections>
-                            </button>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kcl-7Y-E3G">
+                                <rect key="frame" x="72" y="48" width="170" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Rul-2S-cdt"/>
+                    <connections>
+                        <outlet property="imageView" destination="kcl-7Y-E3G" id="J1R-Tv-Wl6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YEj-4p-fwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -423,7 +436,7 @@
                         <viewControllerLayoutGuide type="bottom" id="egR-VT-3pt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UC2-bm-b0q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A_arigatou.png" translatesAutoresizingMaskIntoConstraints="NO" id="8cP-7J-IRQ">
@@ -556,6 +569,7 @@
     </scenes>
     <resources>
         <image name="A_arigatou.png" width="640" height="1136"/>
+        <image name="A_judgement(background).png" width="640" height="1136"/>
         <image name="A_keyboard.png" width="640" height="1136"/>
         <image name="A_keyboardtop.png" width="640" height="204"/>
         <image name="Q_arigato_button.png" width="450" height="98"/>
