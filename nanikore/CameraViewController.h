@@ -13,7 +13,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TopViewController.h"
 
 @interface CameraViewController : UIImagePickerController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
-
+@property (nonatomic, strong) TopViewController * prevViewController;
 @end

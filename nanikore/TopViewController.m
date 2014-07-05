@@ -7,6 +7,10 @@
 //
 
 #import "TopViewController.h"
+#import "CameraViewController.h"
+
+#define kCameraSegue @"camera"
+#define kAskSegue @"ask"
 
 @interface TopViewController ()
             
@@ -24,6 +28,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+  if ([segue.identifier isEqualToString:kCameraSegue]) {
+    CameraViewController * vc = segue.destinationViewController;
+    vc.prevViewController = self;
+  }
+}
+
+- (void) pushAskViewController {
+  [self performSegueWithIdentifier:kAskSegue sender:self];
 }
 
 @end

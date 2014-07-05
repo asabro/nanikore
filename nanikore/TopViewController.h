@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TopViewController : UIViewController
-
-
+- (void) pushAskViewController;
 @end
 

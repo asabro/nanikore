@@ -64,6 +64,9 @@
   // モーダルビューを閉じる
   [self dismissViewControllerAnimated:YES completion:nil];
   
+  // Ask画面に遷移
+  [self.prevViewController pushAskViewController];
+  
 //  // 渡されてきた画像をフォトアルバムに保存
 //  UIImageWriteToSavedPhotosAlbum(image, self, @selector(targetImage:didFinishSavingWithError:contextInfo:), NULL);
 }
