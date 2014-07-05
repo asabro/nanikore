@@ -18,7 +18,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -27,6 +26,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor blackColor];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -53,7 +53,7 @@
   self.sourceType = UIImagePickerControllerSourceTypeCamera;
   
   // 画像取得後に編集するかどうか（デフォルトはNO）
-  self.allowsEditing = YES;
+  self.allowsEditing = NO;
 }
 
 // 画像が選択された時に呼ばれるデリゲートメソッド
@@ -64,8 +64,8 @@
   // モーダルビューを閉じる
   [self dismissViewControllerAnimated:YES completion:nil];
   
-  // 渡されてきた画像をフォトアルバムに保存
-  UIImageWriteToSavedPhotosAlbum(image, self, @selector(targetImage:didFinishSavingWithError:contextInfo:), NULL);
+//  // 渡されてきた画像をフォトアルバムに保存
+//  UIImageWriteToSavedPhotosAlbum(image, self, @selector(targetImage:didFinishSavingWithError:contextInfo:), NULL);
 }
 
 // 画像の選択がキャンセルされた時に呼ばれるデリゲートメソッド
