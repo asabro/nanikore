@@ -383,11 +383,19 @@
                                 <rect key="frame" x="72" y="48" width="170" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9Z-ve-Iwy">
+                                <rect key="frame" x="264" y="65" width="20" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="asS-Dn-4iv"/>
                     <connections>
+                        <outlet property="countLabel" destination="e9Z-ve-Iwy" id="irZ-Wt-W3L"/>
                         <outlet property="imageView" destination="kj8-8a-K9a" id="cNA-Os-Yn3"/>
                         <outlet property="textField" destination="cLg-sj-kNx" id="gnz-8L-kHF"/>
                         <outlet property="textLabel" destination="a6H-fy-KVj" id="CL2-nn-rbZ"/>
@@ -429,11 +437,18 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SW-Hs-gv6">
+                                <rect key="frame" x="262" y="71" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Rul-2S-cdt"/>
                     <connections>
+                        <outlet property="countLabel" destination="3SW-Hs-gv6" id="Nh9-Ld-M2o"/>
                         <outlet property="imageView" destination="kcl-7Y-E3G" id="J1R-Tv-Wl6"/>
                         <outlet property="label" destination="Kd0-Zr-TRA" id="o0p-SX-Rji"/>
                         <outlet property="tableView" destination="aOj-3x-bHG" id="YeL-Vz-AX6"/>
@@ -492,11 +507,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M27-I1-Kdi">
+                                <rect key="frame" x="266" y="70" width="19" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000596046448" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ycd-U9-pdn"/>
                     <connections>
+                        <outlet property="countLabel" destination="M27-I1-Kdi" id="wf4-bG-FTb"/>
                         <outlet property="label1" destination="w4l-yc-WlW" id="uE7-ID-1Lr"/>
                         <outlet property="label2" destination="Vj4-zS-jTT" id="vOz-f0-Obd"/>
                     </connections>

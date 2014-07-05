@@ -13,8 +13,10 @@
 #import "AnswerFinishViewController.h"
 
 @interface OtherAnswerListViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property NSTimer * timer;
 @end
 
 @implementation OtherAnswerListViewController
@@ -44,7 +46,16 @@
   AppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
   appDelegate.otherAnswerViewController = self;
   
-  [self performSelector:@selector(pushFinishView) withObject:nil afterDelay:5.0];
+  _countLabel.text = [NSString stringWithFormat:@"%02d", _timeLeft];
+  _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(count) userInfo:nil repeats:YES];
+}
+
+- (void)count {
+  _timeLeft--;
+  _countLabel.text = [NSString stringWithFormat:@"%02d", _timeLeft];
+  if (_timeLeft <= 0) {
+    [self performSegueWithIdentifier:@"finish" sender:self];
+  }
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,6 +73,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+  [_timer invalidate];
   AnswerFinishViewController * vc = [segue destinationViewController];
   vc.answer1 = [AppDelegate answers][0];
   vc.answer2 = [AppDelegate answers][1];

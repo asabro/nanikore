@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 
 @interface AnswerFinishViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
 @end

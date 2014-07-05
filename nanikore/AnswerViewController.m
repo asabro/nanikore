@@ -15,9 +15,12 @@
 #define kOtherAnswerListSegue @"otherAnswerList"
 
 @interface AnswerViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
+@property int timeLeft;
+@property NSTimer * timer;
 @end
 
 @implementation AnswerViewController
@@ -44,6 +47,17 @@
     }];
 
     [_textField becomeFirstResponder];
+  _timeLeft = 15;
+  _countLabel.text = [NSString stringWithFormat:@"%02d", _timeLeft];
+  _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(count) userInfo:nil repeats:YES];
+}
+
+- (void)count {
+  _timeLeft--;
+  _countLabel.text = [NSString stringWithFormat:@"%02d", _timeLeft];
+  if (_timeLeft <= 0) {
+    [self performSegueWithIdentifier:@"otherAnswerList" sender:self];
+  }
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +68,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+  [_timer invalidate];
   NSString * text = _textField.text;
   
   NSDictionary * answer =
@@ -74,6 +89,7 @@
   vc.answer = answer;
   vc.image = self.image;
   vc.text = _question[kQuestionText];
+  vc.timeLeft = self.timeLeft;
 }
 
 /*

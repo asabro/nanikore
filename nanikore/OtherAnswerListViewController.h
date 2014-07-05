@@ -13,4 +13,5 @@
 @property UIImage * image;
 @property NSString * text;
 @property NSDictionary * answer;
+@property int timeLeft;
 @end
