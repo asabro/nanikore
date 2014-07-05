@@ -435,6 +435,7 @@
                         <outlet property="imageView" destination="kcl-7Y-E3G" id="J1R-Tv-Wl6"/>
                         <outlet property="label" destination="Kd0-Zr-TRA" id="o0p-SX-Rji"/>
                         <outlet property="tableView" destination="aOj-3x-bHG" id="YeL-Vz-AX6"/>
+                        <segue destination="D6g-SX-e2J" kind="push" id="i7G-ah-7m5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YEj-4p-fwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -450,7 +451,7 @@
                         <viewControllerLayoutGuide type="bottom" id="egR-VT-3pt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UC2-bm-b0q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A_arigatou.png" translatesAutoresizingMaskIntoConstraints="NO" id="8cP-7J-IRQ">
@@ -477,10 +478,26 @@
                                     <action selector="topButtonPush:" destination="D6g-SX-e2J" eventType="touchUpInside" id="xul-5m-JCY"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4l-yc-WlW">
+                                <rect key="frame" x="46" y="307" width="162" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vj4-zS-jTT">
+                                <rect key="frame" x="46" y="369" width="162" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000596046448" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ycd-U9-pdn"/>
+                    <connections>
+                        <outlet property="label1" destination="w4l-yc-WlW" id="uE7-ID-1Lr"/>
+                        <outlet property="label2" destination="Vj4-zS-jTT" id="vOz-f0-Obd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cj7-VI-4Cv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

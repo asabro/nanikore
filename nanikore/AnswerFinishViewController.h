@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AnswerFinishViewController : UIViewController
+@property NSDictionary *answer1;
+@property NSDictionary *answer2;
 
 @end
