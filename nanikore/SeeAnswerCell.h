@@ -11,4 +11,5 @@
 @interface SeeAnswerCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *label;
++ (CGFloat)rowHeight;
 @end

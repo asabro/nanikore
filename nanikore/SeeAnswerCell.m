@@ -9,5 +9,7 @@
 #import "SeeAnswerCell.h"
 
 @implementation SeeAnswerCell
-
++ (CGFloat)rowHeight {
+  return 118.0f;
+}
 @end

@@ -11,6 +11,8 @@
 
 #import "AnswerKeys.h"
 
+#import "SeeAnswerCell.h"
+
 @interface SeeAnswerViewController ()
 @end
 
@@ -54,11 +56,16 @@
   AppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
   appDelegate.seeAnswerViewController = self;
   
-  _tableView.dataSource = self;
+  [self setupTable];
+  
 }
 
 - (void) setupTable {
+  UINib *nib = [UINib nibWithNibName:NSStringFromClass([SeeAnswerCell class])
+                              bundle:nil];
+  [self.tableView registerNib:nib forCellReuseIdentifier:@"Cell"];
   
+  _tableView.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,17 +82,17 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  
   NSString *cellIdentifier = @"Cell";
-  UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-  if (cell == nil) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-  }
+  SeeAnswerCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
   
   NSDictionary * answer = _answers[indexPath.row];
-  cell.textLabel.text = answer[kAnswerText];
+  cell.label.text = answer[kAnswerText];
   return cell;
 }
 
+#pragma mark - tableviewdelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return [SeeAnswerCell rowHeight];
+}
 
 @end
