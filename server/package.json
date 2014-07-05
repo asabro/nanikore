@@ -1,0 +1,24 @@
+{
+  "name": "nanikore",
+  "version": "0.0.0",
+  "description": "socket.io/REST API for nanikore.app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asabro/nanikore"
+  },
+  "author": "Ryohei Fushimi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asabro/nanikore/issues"
+  },
+  "homepage": "https://github.com/asabro/nanikore",
+  "dependencies": {
+    "express": "^4.5.0",
+    "socket.io": "^1.0.6"
+  }
+}
