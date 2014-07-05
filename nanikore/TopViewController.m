@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 nae-lab. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "TopViewController.h"
 
-@interface ViewController ()
+@interface TopViewController ()
             
 
 @end
 
-@implementation ViewController
+@implementation TopViewController
             
 - (void)viewDidLoad {
     [super viewDidLoad];
