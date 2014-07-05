@@ -9,8 +9,10 @@
 #import "SeeAnswerViewController.h"
 #import "AppDelegate.h"
 
-@interface SeeAnswerViewController ()
+#import "AnswerKeys.h"
 
+@interface SeeAnswerViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation SeeAnswerViewController
@@ -28,11 +30,32 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-  _answers = [NSMutableArray array];
+  
+//  _answers = [NSMutableArray array];
+  NSArray * answers =
+  @[
+    @{kAnswerText: @"といれ",
+      kAnswerQID: @"123",
+      kAnswerName: @"murakami"},
+    @{kAnswerText: @"といれだよ",
+      kAnswerQID: @"123",
+      kAnswerName: @"murakami"},
+    @{kAnswerText: @"といれっと",
+      kAnswerQID: @"123",
+      kAnswerName: @"murakami"},
+    @{kAnswerText: @"といれ〜",
+      kAnswerQID: @"123",
+      kAnswerName: @"murakami"},
+    @{kAnswerText: @"といれtれ",
+      kAnswerQID: @"123",
+      kAnswerName: @"murakami"},
+    ];
+  _answers = [answers mutableCopy];
   // データ受け取りの準備
   AppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
   appDelegate.seeAnswerViewController = self;
   
+  _tableView.dataSource = self;
 }
 
 - (void) setupTable {
@@ -45,6 +68,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - datasource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  
+  return _answers.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  
+  NSString *cellIdentifier = @"Cell";
+  UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+  if (cell == nil) {
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+  }
+  
+  NSDictionary * answer = _answers[indexPath.row];
+  cell.textLabel.text = answer[kAnswerText];
+  return cell;
+}
 
 
 @end

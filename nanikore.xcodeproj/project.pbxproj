@@ -19,6 +19,7 @@
 		6CD62D321968119F00E904DD /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D311968119F00E904DD /* AnswerViewController.m */; };
 		6CD62D35196811B900E904DD /* OtherAnswerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D34196811B900E904DD /* OtherAnswerListViewController.m */; };
 		6CD62D38196811CF00E904DD /* AnswerFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D37196811CF00E904DD /* AnswerFinishViewController.m */; };
+		6CD62D3E1968343900E904DD /* SeeAnswerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CD62D3D1968343900E904DD /* SeeAnswerCell.m */; };
 		F9B798B11967B7A000D97DDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B01967B7A000D97DDE /* main.m */; };
 		F9B798B41967B7A000D97DDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B31967B7A000D97DDE /* AppDelegate.m */; };
 		F9B798B71967B7A000D97DDE /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B798B61967B7A000D97DDE /* TopViewController.m */; };
@@ -66,6 +67,8 @@
 		6CD62D37196811CF00E904DD /* AnswerFinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerFinishViewController.m; sourceTree = "<group>"; };
 		6CD62D3A1968254700E904DD /* QuestionKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionKeys.h; sourceTree = "<group>"; };
 		6CD62D3B196827E100E904DD /* AnswerKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnswerKeys.h; sourceTree = "<group>"; };
+		6CD62D3C1968343900E904DD /* SeeAnswerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeAnswerCell.h; sourceTree = "<group>"; };
+		6CD62D3D1968343900E904DD /* SeeAnswerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeAnswerCell.m; sourceTree = "<group>"; };
 		B08DDD4CEC294F42BCBB34BB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C5FE27FD02B44B44B3BED450 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B798AB1967B7A000D97DDE /* nanikore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nanikore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +131,8 @@
 			children = (
 				6CD62D0C1967E38600E904DD /* SeeAnswerViewController.h */,
 				6CD62D0D1967E38600E904DD /* SeeAnswerViewController.m */,
+				6CD62D3C1968343900E904DD /* SeeAnswerCell.h */,
+				6CD62D3D1968343900E904DD /* SeeAnswerCell.m */,
 			);
 			name = SeeAnswer;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CD62D2719680D6B00E904DD /* ViewController.m in Sources */,
+				6CD62D3E1968343900E904DD /* SeeAnswerCell.m in Sources */,
 				F9B798B71967B7A000D97DDE /* TopViewController.m in Sources */,
 				6CD62D2C1968102100E904DD /* AnswerTopViewController.m in Sources */,
 				6C3B703D1967CE4000B67EE7 /* CameraViewController.m in Sources */,

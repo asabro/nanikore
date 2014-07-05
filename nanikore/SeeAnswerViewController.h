@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SeeAnswerViewController : UIViewController
+@interface SeeAnswerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSMutableArray * answers;
 @end
