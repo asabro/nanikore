@@ -31,6 +31,10 @@
 {
   [super viewDidLoad];
   // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
   _questions = [AppDelegate questions];
 //  [self performSegueWithIdentifier:@"countDown" sender:self];
   [self performSelector:@selector(pushCountdownView) withObject:nil afterDelay:1.0];
