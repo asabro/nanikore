@@ -48,6 +48,10 @@
 
     [_textField becomeFirstResponder];
   _timeLeft = 15;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
   _countLabel.text = [NSString stringWithFormat:@"%02d", _timeLeft];
   _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(count) userInfo:nil repeats:YES];
 }
@@ -69,27 +73,30 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
   [_timer invalidate];
-  NSString * text = _textField.text;
-  
-  NSDictionary * answer =
-  @{
-    kAnswerQID: _question[kQuestionID],
-    kAnswerName: [AppDelegate username],
-    kAnswerText: text
-    };
-  
-  // send answer
-  NSLog(@"%@", answer);
-  
-  AZSocketIO * socketIO = [AppDelegate answerSocketIO];
-  [socketIO emit:@"answer" args:answer error:nil ack:^{
-  }];
-  
-  OtherAnswerListViewController * vc = [segue destinationViewController];
-  vc.answer = answer;
-  vc.image = self.image;
-  vc.text = _question[kQuestionText];
-  vc.timeLeft = self.timeLeft;
+  if ([segue.identifier isEqualToString:@"draw"]){
+  } else {
+    NSString * text = _textField.text;
+    
+    NSDictionary * answer =
+    @{
+      kAnswerQID: _question[kQuestionID],
+      kAnswerName: [AppDelegate username],
+      kAnswerText: text
+      };
+    
+    // send answer
+    NSLog(@"%@", answer);
+    
+    AZSocketIO * socketIO = [AppDelegate answerSocketIO];
+    [socketIO emit:@"answer" args:answer error:nil ack:^{
+    }];
+    
+    OtherAnswerListViewController * vc = [segue destinationViewController];
+    vc.answer = answer;
+    vc.image = self.image;
+    vc.text = _question[kQuestionText];
+    vc.timeLeft = self.timeLeft;
+  }
 }
 
 /*
