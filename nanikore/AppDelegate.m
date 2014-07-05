@@ -58,12 +58,6 @@
   
   [self.socketIO connectWithSuccess:^{
     NSLog(@"Success connecting!");
-//    NSError * error;
-//    [self.socketIO emit:@"authenticate" args:@{@"username": @"ryohei"} error:&error ackWithArgs:^(NSArray *data){
-//      NSLog(@"%@", data);
-//      NSLog(@"hello");
-//    }];
-//    NSLog(@"%@", error);
   } andFailure:^(NSError *error) {
     NSLog(@"Failure connecting. error: %@", error);
   }];
