@@ -25,17 +25,6 @@
   // init s3
   [self initS3];
   
-  //  [self.socketIO connectWithSuccess:^{
-  //    NSLog(@"Success connecting!");
-  //    NSError * error;
-  //    [self.socketIO emit:@"authenticate" args:@{@"username": @"ryohei"} error:&error ackWithArgs:^(NSArray *data){
-  //      NSLog(@"%@", data);
-  //      NSLog(@"hello");
-  //    }];
-  //    NSLog(@"%@", error);
-  //  } andFailure:^(NSError *error) {
-  //    NSLog(@"Failure connecting. error: %@", error);
-  //  }];
   
   return YES;
 }
@@ -62,6 +51,22 @@
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+// ============
+
+- (void)initSocketIO {
+  //  [self.socketIO connectWithSuccess:^{
+  //    NSLog(@"Success connecting!");
+  //    NSError * error;
+  //    [self.socketIO emit:@"authenticate" args:@{@"username": @"ryohei"} error:&error ackWithArgs:^(NSArray *data){
+  //      NSLog(@"%@", data);
+  //      NSLog(@"hello");
+  //    }];
+  //    NSLog(@"%@", error);
+  //  } andFailure:^(NSError *error) {
+  //    NSLog(@"Failure connecting. error: %@", error);
+  //  }];
+}
+
 + (AZSocketIO *)socketIO {
   AppDelegate * delegate = [UIApplication sharedApplication].delegate;
   return delegate.socketIO;
@@ -75,6 +80,11 @@
     self.s3 = [[AmazonS3Client alloc] initWithAccessKey:ACCESS_KEY_ID withSecretKey:SECRET_KEY];
     self.s3.endpoint = [AmazonEndpoints s3Endpoint:US_WEST_2];
   }
+}
+
++ (AmazonS3Client *)s3 {
+  AppDelegate * delegate = [UIApplication sharedApplication].delegate;
+  return delegate.s3;
 }
 
 @end
