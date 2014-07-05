@@ -7,6 +7,7 @@
 //
 
 #import "AskViewController.h"
+#import "AppDelegate.h"
 
 @interface AskViewController ()
 
@@ -16,17 +17,34 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+  if (self) {
+    // Custom initialization
+  }
+  return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  // Do any additional setup after loading the view.
+  [self postAsk];
+  
+}
+
+- (void)postAsk {
+  AZSocketIO * socketIO = [AppDelegate socketIO];
+  
+  NSError * error;
+  NSDictionary * ask = @{@"name": @"ryohei",
+                         @"text": @"hello",
+                         @"url": @"http://sample.jp"
+                         };
+  
+  [socketIO emit:@"ask" args:ask error:&error ackWithArgs:^(NSArray *data){
+    NSLog(@"%@", data);
+    NSLog(@"hello");
+  }];
+  NSLog(@"%@", error);
   
 }
 
