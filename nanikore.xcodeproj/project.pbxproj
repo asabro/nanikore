@@ -82,8 +82,6 @@
 			children = (
 				6C3B703B1967CE4000B67EE7 /* CameraViewController.h */,
 				6C3B703C1967CE4000B67EE7 /* CameraViewController.m */,
-				6CD62D121967E6DF00E904DD /* Constants.h */,
-				6CD62D131967E6DF00E904DD /* Constants.m */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -146,6 +144,8 @@
 		F9B798AD1967B7A000D97DDE /* nanikore */ = {
 			isa = PBXGroup;
 			children = (
+				6CD62D121967E6DF00E904DD /* Constants.h */,
+				6CD62D131967E6DF00E904DD /* Constants.m */,
 				6CD62D081967E36800E904DD /* Evaluate */,
 				6CD62D071967E35D00E904DD /* SeeAnswer */,
 				6CD62D061967E35800E904DD /* Ask */,
