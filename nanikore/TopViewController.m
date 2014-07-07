@@ -8,6 +8,7 @@
 
 #import "TopViewController.h"
 #import "CameraViewController.h"
+#import "AskViewController.h"
 #import "AppDelegate.h"
 
 #define kCameraSegue @"camera"
@@ -24,7 +25,7 @@
   // Do any additional setup after loading the view, typically from a nib.
   [self.navigationController setNavigationBarHidden:YES animated:NO];
   AppDelegate * appDelegate;
-  [appDelegate initSocketIOAsAskMode];
+  [appDelegate initAskSocketIO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,6 +38,10 @@
   if ([segue.identifier isEqualToString:kCameraSegue]) {
     CameraViewController * vc = segue.destinationViewController;
     vc.prevViewController = self;
+  } else if ([segue.identifier isEqualToString:kAskSegue]) {
+    AskViewController * vc = segue.destinationViewController;
+    vc.imgurl = self.imgurl;
+    vc.image = self.image;
   }
 }
 

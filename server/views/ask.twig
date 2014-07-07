@@ -16,6 +16,8 @@ Nani-colle ask debug console
 
 <h3>Ask a question</h3>
 
+<button type="button" class="btn btn-default" id="button">Question</button>
+
 <form role="form" id="form-ask">
   <div class="form-group">
     <label for="inputName">Name</label>
@@ -29,17 +31,29 @@ Nani-colle ask debug console
     <label for="inputURL">URL</label>
     <input type="url" class="form-control" id="inputURL" placeholder="Enter Image URL" required="required" value="https://dl.dropboxusercontent.com/u/6324118/toilet.png">
   </div>
-
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
 
-<h3>Received Answer</h3>
+<h3>Received Answers</h3>
 
 <ul id="answer">
-
 	
 </ul>
 
+<h3>Evaluate Answers</h3>
+
+
+<form role="form" id="form-eval">
+  <div class="form-group">
+    <label for="input1st">1st</label>
+    <input type="text" class="form-control" id="input1st" placeholder="Enter aid" value="0">
+  </div>
+  <div class="form-group">
+    <label for="input2nd">2nd</label>
+    <input type="text" class="form-control" id="input2nd" placeholder="Enter aid" value="1">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
 
 <h3>Console</h3>
 <ul id="console">

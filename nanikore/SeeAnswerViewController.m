@@ -7,9 +7,18 @@
 //
 
 #import "SeeAnswerViewController.h"
+#import "AppDelegate.h"
+
+#import "AnswerKeys.h"
+
+#import "SeeAnswerCell.h"
 
 @interface SeeAnswerViewController ()
-
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *arigatoButton;
+@property BOOL selectEnabled;
+@property int  selectCounter;
 @end
 
 @implementation SeeAnswerViewController
@@ -25,8 +34,37 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
+  // Do any additional setup after loading the view.
+  
+  _imageView.image = _image;
+  
+  _answers = [NSMutableArray array];
+  // データ受け取りの準備
+  AppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
+  appDelegate.seeAnswerViewController = self;
+  
+  [self setupTable];
+  
+  [self performSelector:@selector(enableSelecting) withObject:nil afterDelay:5.0];
+}
+
+- (void) setupTable {
+  UINib *nib = [UINib nibWithNibName:NSStringFromClass([SeeAnswerCell class])
+                              bundle:nil];
+  [self.tableView registerNib:nib forCellReuseIdentifier:@"Cell"];
+  
+  _tableView.dataSource = self;
+  _tableView.delegate = self;
+}
+
+- (void) enableSelecting {
+  _selectEnabled = YES;
+  _backgroundImageView.image = [UIImage imageNamed:@"Q_selectA.png"];
+}
+
+- (void) showArigatoButton {
+  _arigatoButton.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,15 +73,58 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)arigatoButtonPush:(id)sender {
+  [self.navigationController popToRootViewControllerAnimated:YES];
 }
-*/
+
+#pragma mark - datasource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  
+  return _answers.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSString *cellIdentifier = @"Cell";
+  SeeAnswerCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+  
+  NSDictionary * answer = _answers[indexPath.row];
+  cell.mainLabel.text = answer[kAnswerText];
+  cell.nameLabel.text = answer[kAnswerName];
+  return cell;
+}
+
+#pragma mark - tableviewdelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return [SeeAnswerCell rowHeight];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (!_selectEnabled) return;
+  SeeAnswerCell * cell = (SeeAnswerCell *)[tableView cellForRowAtIndexPath:indexPath];
+  
+  if (!cell.gold.hidden || !cell.silver.hidden) return;
+    
+    NSDictionary* answer = _answers[indexPath.row];
+  if (_selectCounter == 0) {
+    cell.gold.hidden = NO;
+      self.goldAid = answer[kAnswerAID];
+  } else if (_selectCounter == 1) {
+    cell.silver.hidden = NO;
+      self.silverAid = answer[kAnswerAID];
+  }
+  
+  _selectCounter++;
+  if ((_selectCounter >= 2) || (_selectCounter >= _answers.count)) {
+      AZSocketIO* socketIO = [AppDelegate askSocketIO];
+      if(_selectCounter == 2){
+            [socketIO emit:@"eval" args:@{@"qid": @0, @"eval": @[self.goldAid, self.silverAid]} error:nil ack:^{}];
+      }else if(_selectCounter == 1){
+          [socketIO emit:@"eval" args:@{@"qid": @0, @"eval": @[self.goldAid]} error:nil ack:^{}];
+          
+      }
+    [self showArigatoButton];
+  }
+}
 
 @end

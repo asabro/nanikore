@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OtherAnswerListViewController : UIViewController
-
+@interface OtherAnswerListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property UIImage * image;
+@property NSString * text;
+@property NSDictionary * answer;
+@property int timeLeft;
 @end

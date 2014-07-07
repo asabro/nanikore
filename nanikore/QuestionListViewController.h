@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface QuestionListViewController : UIViewController
-
+@property UIImage * image;
 @end
