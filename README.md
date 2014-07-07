@@ -1,7 +1,6 @@
 nanikore
 ========
 
-
 nanikore - camera / quiz
 
-![assets/naruhodo.psd]()
+<http://nani-colle.com>
